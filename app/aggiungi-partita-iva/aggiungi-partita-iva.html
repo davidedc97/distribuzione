@@ -1,0 +1,121 @@
+<!--//indirizzo, numero civico, cap, regione(tendina), provincia(tendina), comune(tendina), tipologia di recapito-->
+<!--// (tendina con residenza, domicilio, domicilio fiscale, è un json che mi arriva in input, per ora farlo a mano)-->
+<!--<img src="https://icons-for-free.com/iconfiles/png/512/arrows+double+arrow+doublechevronleft+left+icon-1320185729725994033.png" style="top: 15px;left: 15px;width: 35px;height: auto;cursor:pointer;position: absolute;" ng-click="goBack()">
+-->
+<link rel="stylesheet" href="aggiungi-recapito/aggiungi-recapito.css">
+<form name="form">
+<div style="text-align: center;">
+
+<!--        <p>Date: <input type="text" id="datepicker"></p><br>-->
+
+      <table style="margin: 0 auto;">
+          <tr ><td></td><td style="text-align: left"><label style="color:red" >* obbligatorio</label></td></tr>
+          <tr>
+
+      <td style="text-align: left">Indirizzo:
+
+      </td><td style="text-align: left">
+          <input name="indirizzo" ng-model="indirizzo" ng-pattern="validaIndirizzo.regExp" required style="width: 176px">
+      <label style="color:red"> *</label></td>
+
+      </tr>
+          <tr>
+
+          <td style="text-align: left">Numero Civico:     </td><td style="text-align: left">
+          <input name="civico" type="number" ng-model="numeroCivico" ng-pattern="validaCivico.regExp" required maxlength="5" style="width: 176px">
+      <label style="color:red"> *</label>
+
+              </tr>
+              <tr>
+
+          <td style="text-align: left"> Regione:     </td><td style="text-align: left">
+
+          <select name="regione" ng-model="regione" required  style="width: 180px">
+        <option ng-repeat="x in listaRegioniDinamica" value="{{x}}" >{{x}}</option>
+      </select>
+      <label style="color:red"> *</label>
+
+
+              </tr>
+              <tr>
+
+          <td style="text-align: left">Provincia:    </td><td style="text-align: left">
+
+          <select name="provincia" ng-model="provincia" required style="width: 180px">
+        <option ng-repeat="x in listaProvinceDinamica[regione]" value="{{x}}" >{{x}}</option>
+      </select>
+      <label style="color:red"> *</label>
+
+
+
+              </tr>
+              <tr style="text-align: left">
+          <td>Comune:     </td><td style="text-align: left">
+
+          <select name="comune" ng-model="comune" required style="width: 180px">
+        <option ng-repeat="x in listaComuniDinamica[provincia]" value="{{x}}" >{{x}}</option>
+      </select>
+      <label style="color:red"> *</label>
+
+
+              </tr>
+              <tr>
+
+          <td style="text-align: left"> CAP:    </td><td style="text-align: left">
+
+          <input size="3" ng-model="cap" name="cap" ng-pattern="validaCap.regExp" required maxlength="5" minlength="5">
+      <label style="color:red"> *</label>
+
+              </tr>
+              <tr>
+
+          <td style="text-align: left"> Tipologia di recapito:&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="text-align: left">
+
+
+      <select   ng-model="tipologiaDiRecapito" name="recapito" required style="width: 180px">
+        <option value="residenza">residenza</option>
+        <option value="domicilio">domicilio</option>
+        <option value="fiscale">fiscale</option>
+      </select>
+      <label style="color:red"> *</label>
+              </tr>
+
+              <tr style="text-align: left">
+                  <td>Inizio validità:     </td><td style="text-align: left">
+                    <input id="inizioValidita" name="inizioValidità" ng-model="inizioValidita" required style="width: 176px">
+                    <label style="color:red"> *</label>
+              </tr>
+              <tr style="text-align: left">
+                  <td>Fine validità:     </td><td style="text-align: left">
+                    <input id="fineValidita" name="fineValidità" ng-model="fineValidita" required style="width: 176px">
+                    <label style="color:red"> *</label>
+              </tr>
+      </table>
+    <br>
+    <button ng-click="aggiungi()">Aggiungi</button> <a  href="#!/recapiti"> <button >Annulla</button></a>
+    <div class="input-wrapper error" ng-show="form.$submitted && form.indirizzo.$touched && form.indirizzo.$error">
+      {{getErrorLabel(form.indirizzo.$name, form.indirizzo.$error)}}
+    </div>
+    <div class="input-wrapper error" ng-show="form.$submitted && form.civico.$touched && form.civico.$error">
+      {{getErrorLabel(form.civico.$name, form.civico.$error)}}
+    </div>
+    <div class="input-wrapper error" ng-show="form.$submitted && form.regione.$error">
+      {{getErrorLabel(form.regione.$name, form.regione.$error)}}
+    </div>
+    <div class="input-wrapper error" ng-show="form.$submitted && form.provincia.$error">
+      {{getErrorLabel(form.provincia.$name, form.provincia.$error)}}
+    </div>
+    <div class="input-wrapper error" ng-show="form.$submitted && form.comune.$error">
+      {{getErrorLabel(form.comune.$name, form.comune.$error)}}
+    </div>
+    <div class="input-wrapper error" ng-show="form.$submitted && form.cap.$touched && form.cap.$error">
+      {{getErrorLabel(form.cap.$name, form.cap.$error)}}
+    </div>
+    <div class="input-wrapper error" ng-show="form.$submitted && form.recapito.$touched && form.recapito.$error">
+      {{getErrorLabel(form.recapito.$name, form.recapito.$error)}}
+    </div>
+    <div id="dateError" class="input-wrapper error" style="display:none">
+    </div>
+  </div>
+
+</form>

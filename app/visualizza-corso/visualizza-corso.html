@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="visualizza-corso/visualizza-corso.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.visualizzaCorso}}</h2>
+<br>
+<div>
+  <h1>{{corso.titolo}}</h1>
+  <h3>{{corso.descrizione}}</h3>
+</div>
+<div class="container-materiale w-100" style="color:light-blue">
+  <!--  questo div conterrà la visualizzazione del materiale  -->
+</div>
+<br>
+<div class="card w-75 mx-auto">
+  <div class="card-body" id="partecipantiContainer">
+    <h3 class="font-weight-bold">{{labelCampi.presenti}}</h3>
+    <button class="btn selectAllBtn" ng-click="selezionaTutto()">
+      <i class="material-icons md-36">playlist_add_check</i>
+    </button>
+    <!--<button class="btn btn-primary" ng-click="selezionaTutto()">{{labelCampi.selezionaTutto}}</button>-->
+    <div ng-repeat="x in listaPartecipanti track by $index ">
+      <div class="row" ng-if="x.nome && x.cognome">
+        <!--
+        <div class="col-2 col-md-1 no-pad-r">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox">
+          </div>
+        </div>
+        -->
+        <div class="col col-md riga" ng-click="selezionaRiga()">
+          <label class="form-check-label riga-dipe">{{x.nome}}&nbsp{{x.cognome}}</label>
+        </div>
+      </div>
+    </div>
+    <br>
+    <button class="btn btn-primary" ng-click="salvaPartecipanti()">{{labelCampi.salvaBtn}}</button>
+  </div>
+</div>
+<br>
+<div class="card w-75 mx-auto">
+  <div class="card-body">
+    <h3 class="font-weight-bold">{{labelCampi.materialeScans}}</h3>
+    <div ng-repeat="x in listaMaterialeScans track by $index ">
+      <div class="row" ng-if="x">
+        <div class="col col-md riga" ng-click="selezionaRiga()">
+          <label class="form-check-label">{{x}}</label>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="input-group mb-3" style="z-index:0">
+      <div class="input-group-prepend">
+        <span class="input-group-text">{{labelCampi.materiale}}</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" multiple data-show-upload="true" data-show-caption="true" class="custom-file-input" id="inputMateriale" name="inputMateriale[]" ng-model="inputMateriale" onchange="angular.element(this).scope().parseFile()">
+        <label class="custom-file-label text-left" id="inputLabel">{{labelCampi.scegli}}</label>
+      </div>
+    </div>
+    <label class="float-left m-0">{{labelCampi.selezionati}}:</label>
+    <br>
+    <div id="inputLabelContainer">
+      <!-- container per i nomi dei file presi da input -->
+    </div>
+    <br>
+    <button class="btn btn-primary" ng-click="acquisisciDoc()">{{labelCampi.acquisisciDocBtn}}</button>
+    <br>
+  </div>
+</div>
+<br>

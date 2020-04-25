@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="aggiungi-anagrafica/aggiungi-anagrafica.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.aggiungiAnagrafica}}</h2>
+<br>
+<div class="card w-75 mx-auto">
+  <div class="card-body">
+    <form name="form">
+      <label class="float-left" style="color:red" >* {{labelCampi.obbligatorio}}</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.ragioneSociale}}</span>
+        </div>
+        <input name="ragioneSociale" ng-model="ragioneSociale" ng-pattern="validaRagioneSociale.regExp" required type="text" class="form-control" placeholder={{labelCampi.ragioneSociale}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.partitaIva}}</span>
+        </div>
+        <input name="partitaIva" ng-model="partitaIva" ng-pattern="validaPartitaIva.regExp" required type="text" class="form-control" placeholder={{labelCampi.partitaIva}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.codiceRea}}</span>
+        </div>
+        <input name="codiceRea" ng-model="codiceRea" ng-pattern="validaCodiceRea.regExp" required ngMaxlength="11" ngMinlength="11" maxlength="11" minlength="11" type="text" class="form-control" placeholder={{labelCampi.codiceRea}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.indirizzo}}</span>
+        </div>
+        <input name="indirizzo" ng-model="indirizzo" ng-pattern="validaIndirizzo.regExp" required type="text" class="form-control" placeholder={{labelCampi.indirizzo}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.civico}}</span>
+        </div>
+        <input name="civico" type="number" ng-model="civico" ng-pattern="validaCivico.regExp" required ng-min="1" maxlength="5" type="text" class="form-control" placeholder={{labelCampi.civico}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.cap}}</span>
+        </div>
+        <input name="cap" ng-model="cap" id="cap" required type="text" minlength= "5" maxlength="5" class="form-control" placeholder={{labelCampi.cap}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.citta}}</span>
+        </div>
+        <input name="citta" ng-model="citta" id="citta" required type="text" class="form-control" placeholder={{labelCampi.citta}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.provincia}}</span>
+        </div>
+        <input name="provincia" ng-model="provincia" id="provincia" required type="text" class="form-control" placeholder={{labelCampi.provincia}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.stato}}</span>
+        </div>
+        <input name="stato" ng-model="stato" id="stato" required type="text" class="form-control" placeholder={{labelCampi.stato}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <button class="btn btn-primary" ng-click="salva()">{{labelCampi.aggiungiBtn}}</button>
+      &nbsp
+      <button class="btn btn-primary" ng-click="annulla()">{{labelCampi.annullaBtn}}</button>
+      <br><br>
+      <div class="error" ng-show="form.$submitted && form.ragioneSociale.$touched && form.ragioneSociale.$error">
+        {{getErrorLabel(form.ragioneSociale.$name, form.ragioneSociale.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.partitaIva.$touched && form.partitaIva.$error">
+        {{getErrorLabel(form.partitaIva.$name, form.partitaIva.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.codiceRea.$touched && form.codiceRea.$error">
+        {{getErrorLabel(form.codiceRea.$name, form.codiceRea.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.indirizzo.$touched && form.indirizzo.$error">
+        {{getErrorLabel(form.indirizzo.$name, form.indirizzo.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.civico.$touched && form.civico.$error">
+        {{getErrorLabel(form.civico.$name, form.civico.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.cap.$touched && form.cap.$error">
+        {{getErrorLabel(form.cap.$name, form.cap.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.citta.$touched && form.citta.$error">
+        {{getErrorLabel(form.citta.$name, form.citta.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.provincia.$touched && form.provincia.$error">
+        {{getErrorLabel(form.provincia.$name, form.provincia.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.stato.$touched && form.stato.$error">
+        {{getErrorLabel(form.stato.$name, form.stato.$error)}}
+      </div>
+    </form>
+  </div>
+</div>
+<br>

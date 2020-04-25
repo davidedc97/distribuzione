@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="riepilogo/riepilogo.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.riepilogo}}</h2>
+<br>
+<div class="card mx-auto" style="width:90%">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered" id="table-container">
+        <thead>
+          <tr>
+            <th scope="col" colspan="2">Dipendente</th>
+            <th scope="col" colspan="2">Gennaio</th>
+            <th scope="col" colspan="2">Febbraio</th>
+            <th scope="col" colspan="2">Marzo</th>
+            <th scope="col" colspan="2">Aprile</th>
+            <th scope="col" colspan="2">Maggio</th>
+            <th scope="col" colspan="2">Giugno</th>
+            <th scope="col" colspan="2">Luglio</th>
+            <th scope="col" colspan="2">Agosto</th>
+            <th scope="col" colspan="2">Settembre</th>
+            <th scope="col" colspan="2">Ottobre</th>
+            <th scope="col" colspan="2">Novembre</th>
+            <th scope="col" colspan="2">Dicembre</th>
+            <th scope="col" colspan="3">Totale</th>
+            <th scope="col-2">Costo&nbsporario</th>
+            <th scope="col">Costo&nbspformazione</th>
+            <th scope="col">Credito&nbspd'imposta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">Ore</th>
+            <th scope="col">Formazione</th>
+            <th scope="col">&#37</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+            <th scope="col">-</th>
+          </tr>
+          <tr ng-repeat="x in riepilogoPersonale track by $index">
+            <td>{{x.nome}}</td>
+            <td>{{x.cognome}}</td>
+            <td>{{x.lavGen}}</td>
+            <td>{{x.formGen}}</td>
+            <td>{{x.lavFeb}}</td>
+            <td>{{x.formFeb}}</td>
+            <td>{{x.lavMar}}</td>
+            <td>{{x.formMar}}</td>
+            <td>{{x.lavApr}}</td>
+            <td>{{x.formApr}}</td>
+            <td>{{x.lavMag}}</td>
+            <td>{{x.formMag}}</td>
+            <td>{{x.lavGiu}}</td>
+            <td>{{x.formGiu}}</td>
+            <td>{{x.lavLug}}</td>
+            <td>{{x.formLug}}</td>
+            <td>{{x.lavAgo}}</td>
+            <td>{{x.formAgo}}</td>
+            <td>{{x.lavSet}}</td>
+            <td>{{x.formSet}}</td>
+            <td>{{x.lavOtt}}</td>
+            <td>{{x.formOtt}}</td>
+            <td>{{x.lavNov}}</td>
+            <td>{{x.formNov}}</td>
+            <td>{{x.lavDic}}</td>
+            <td>{{x.formDic}}</td>
+            <td>{{x.lavTot}}</td>
+            <td>{{x.formTot}}</td>
+            <td>{{x.percTot}}&#37</td>
+            <td>{{x.costoOrario}}</td>
+            <td>{{x.costoForm}}</td>
+            <td>{{x.creditoImposta}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <button class="btn btn-primary" ng-click="esportaPersonale()">{{labelCampi.esportaBtn}}</button><!--ng-if="ruoloUtente=='ADMIN'"-->
+  </div>
+</div>

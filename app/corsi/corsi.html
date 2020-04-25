@@ -1,0 +1,47 @@
+<!--<img src="https://icons-for-free.com/iconfiles/png/512/arrows+double+arrow+doublechevronleft+left+icon-1320185729725994033.png" style="top: 15px;left: 15px;width: 35px;height: auto;cursor:pointer;position: absolute;" ng-click="goBack()">-->
+<link rel="stylesheet" href="corsi/corsi.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.corsi}}</h2>
+<br>
+<div class="input-group w-25 searchbar">
+  <input type="text" class="form-control" placeholder="Ricerca">
+  <div class="input-group-append">
+    <span class="input-group-text fa fa-search"></span>
+  </div>
+</div>
+<button ng-if="ruoloUtente=='ADMIN'" class="btn btn-primary" ng-click="aggiungiCorso()">{{labelCampi.aggiungiCorsoBtn}}</button>
+<br><br>
+<div class="card" ng-repeat="x in listaCorsi track by $index ">
+  <p class="trash-btn" ng-click="rimuovi(listaCorsi.indexOf(x))">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/OOjs_UI_icon_trash.svg/1024px-OOjs_UI_icon_trash.svg.png">
+  </p>
+  <p class="pencil-btn">
+    <a ng-click="gestisciCorso($index)"> <img src="https://simpleicon.com/wp-content/uploads/pencil.png"></a>
+  </p>
+  <div class="card-body text-left corso" ng-click="visualizzaCorso($index)">
+    <div class="row" ng-if="x.titolo!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.titolo}}:</div>
+      <div class="col-6 col-md-6">{{x.titolo}}</div>
+    </div>
+    <div class="row" ng-if="x.descrizione!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.descrizione}}:</div>
+      <div class="col-6 col-md-6">{{x.descrizione}}</div>
+    </div>
+    <div class="row" ng-if="x.durata!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.durata}}:</div>
+      <div class="col-6 col-md-6">{{x.durata}}</div>
+    </div>
+    <div class="row" ng-if="x.aula!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.aula}}:</div>
+      <div class="col-6 col-md-6">{{x.aula}}</div>
+    </div>
+    <div class="row" ng-if="x.dateCorso!=null && x.dateCorso[0]!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.dataInizio}}:</div>
+      <div class="col-6 col-md-6">{{x.dateCorso[0].data}}</div>
+    </div>
+    <div class="row" ng-if="x.dateCorso!=null && x.dateCorso[x.dateCorso.length-1]!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.dataFine}}:</div>
+      <div class="col-6 col-md-6">{{x.dateCorso[x.dateCorso.length-1].data}}</div>
+    </div>
+  </div>
+</div>

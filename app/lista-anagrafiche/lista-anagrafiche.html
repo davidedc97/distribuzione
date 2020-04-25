@@ -1,0 +1,48 @@
+<!--<img src="https://icons-for-free.com/iconfiles/png/512/arrows+double+arrow+doublechevronleft+left+icon-1320185729725994033.png" style="top: 15px;left: 15px;width: 35px;height: auto;cursor:pointer;position: absolute;" ng-click="goBack()">-->
+<link rel="stylesheet" href="lista-anagrafiche/lista-anagrafiche.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.listaAnagrafiche}}</h2>
+<br>
+<button ng-if="ruoloUtente=='ADMIN'" class="btn btn-primary" ng-click="aggiungiAnagrafica()">{{labelCampi.aggiungiAnagraficaBtn}}</button>
+<br><br>
+<div class="card" ng-repeat="x in listaAnagrafiche track by $index ">
+  <div class="card-body text-left" ng-click="selezionaAnagrafica($index)">
+    <div class="row" ng-if="x.ragioneSociale!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.ragioneSociale}}:</div>
+      <div class="col-6 col-md-6">{{x.ragioneSociale}}</div>
+    </div>
+    <div class="row" ng-if="x.partitaIva!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.partitaIva}}:</div>
+      <div class="col-6 col-md-6">{{x.partitaIva}}</div>
+    </div>
+    <div class="row" ng-if="x.codiceRea!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.codiceRea}}:</div>
+      <div class="col-6 col-md-6">{{x.codiceRea}}</div>
+    </div>
+    <div class="row" ng-if="x.indirizzo!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.indirizzo}}:</div>
+      <div class="col-6 col-md-6">{{x.indirizzo}}</div>
+    </div>
+    <div class="row" ng-if="x.civico!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.civico}}:</div>
+      <div class="col-6 col-md-6">{{x.civico}}</div>
+    </div>
+    <div class="row" ng-if="x.cap!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.cap}}:</div>
+      <div class="col-6 col-md-6">{{x.cap}}</div>
+    </div>
+    <div class="row" ng-if="x.citta!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.citta}}:</div>
+      <div class="col-6 col-md-6">{{x.citta}}</div>
+    </div>
+    <div class="row" ng-if="x.provincia!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.provincia}}:</div>
+      <div class="col-6 col-md-6">{{x.provincia}}</div>
+    </div>
+    <div class="row" ng-if="x.stato!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.stato}}:</div>
+      <div class="col-6 col-md-6">{{x.stato}}</div>
+    </div>
+  </div>
+</div>
+<br><br>

@@ -1,0 +1,35 @@
+<!--//indirizzo, numero civico, cap, regione(tendina), provincia(tendina), comune(tendina), tipologia di recapito-->
+<!--// (tendina con residenza, domicilio, domicilio fiscale, è un json che mi arriva in input, per ora farlo a mano)-->
+<!--<img src="https://icons-for-free.com/iconfiles/png/512/arrows+double+arrow+doublechevronleft+left+icon-1320185729725994033.png" style="top: 15px;left: 15px;width: 35px;height: auto;cursor:pointer;position: absolute;" ng-click="goBack()">
+-->
+<link rel="stylesheet" href="aggiungi-foto/aggiungi-foto.css">
+<form name="form">
+  <div style="text-align: center;">
+    <table style="margin: 0 auto;">
+      <tr>
+        <td></td>
+        <td style="text-align: left"><label style="color:red" >* obbligatorio</label></td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Seleziona immagine:</td>
+        <td style="text-align: left">
+          <input id="insert-img" onchange="angular.element(this).scope().setFile(this)" type="file" accept="image/*" name="immagine" ng-model="immagine" required style="width: 200px">
+          <label style="color:red"> *</label>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Aggiungi una descrizione (opzionale):</td>
+        <td style="text-align: left">
+          <textarea name="descrizione" ng-model="descrizione" ng-pattern="validaDescrizione.regExp" style="width: 200px"></textarea>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <button ng-click="aggiungi()">Aggiungi</button> <a  href="#!/photogallery"> <button >Annulla</button></a>
+    <br><br>
+    <div id="imgError" class="input-wrapper error" style="display:none"></div>
+    <div id="descrError" class="input-wrapper error" ng-show="form.$submitted && form.descrizione.$touched && form.descrizione.$error">
+      {{getErrorLabel(form.descrizione.$name, form.descrizione.$error)}}
+    </div>
+  </div>
+</form>

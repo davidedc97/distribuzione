@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="modifica-personale/modifica-personale.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.modificaPersonale}}</h2>
+<br>
+<div class="card w-75 mx-auto">
+  <div class="card-body">
+    <form name="form">
+      <label class="float-left" style="color:red" >* {{labelCampi.obbligatorio}}</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.nome}}</span>
+        </div>
+        <input name="nome" ng-model="nome" ng-pattern="validaNome.regExp" required type="text" class="form-control" placeholder={{labelCampi.nome}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.cognome}}</span>
+        </div>
+        <input name="cognome" ng-model="cognome" ng-pattern="validaCognome.regExp" required type="text" class="form-control" placeholder={{labelCampi.cognome}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.codiceFiscale}}</span>
+        </div>
+        <input name="codiceFiscale" ng-model="codiceFiscale" ng-pattern="validaCF.regExp" required  type="text" ngMaxlength="16" ngMinlength="16" maxlength="16" minlength="16" class="form-control" placeholder={{labelCampi.codiceFiscale}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.costoOrario}}</span>
+        </div>
+        <input name="costo" ng-model="costoOrario" ng-pattern="validaCosto.regExp" required type="number" step="0.1" class="form-control" placeholder={{labelCampi.costoOrario}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.oreLavorative}}</span>
+        </div>
+        <input name="ore" ng-model="oreLavorative" ng-pattern="validaOre.regExp" required type="number" ng-min="0" ng-max="16" maxlength="2" class="form-control" placeholder={{labelCampi.oreLavorative}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text">{{labelCampi.inizioRapporto}}</label>
+        </div>
+        <div class="w-75">
+          <input name="inizioRapporto" ng-model="inizioRapporto" id="inizioRapporto" required readonly type="text" class="form-control datepicker">
+        </div>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text">{{labelCampi.fineRapporto}}</label>
+        </div>
+        <div class="w-75">
+          <input name="fineRapporto" ng-model="fineRapporto" id="fineRapporto" required readonly type="text" class="form-control datepicker">
+        </div>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <button class="btn btn-primary" ng-click="salva()">{{labelCampi.salvaBtn}}</button>
+      <button class="btn btn-primary" ng-click="annulla()">{{labelCampi.annullaBtn}}</button>
+      <br><br>
+      <div class="error" ng-show="form.$submitted && form.nome.$touched && form.nome.$error">
+        {{getErrorLabel(form.nome.$name, form.nome.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.cognome.$touched && form.cognome.$error">
+        {{getErrorLabel(form.cognome.$name, form.cognome.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.codiceFiscale.$touched && form.codiceFiscale.$error">
+        {{getErrorLabel(form.codiceFiscale.$name, form.codiceFiscale.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.costo.$touched && form.costo.$error">
+        {{getErrorLabel(form.costo.$name, form.costo.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.ore.$touched && form.ore.$error">
+        {{getErrorLabel(form.ore.$name, form.ore.$error)}}
+      </div>
+      <div id="dateError" class="error" style="display:none">
+      </div>
+    </form>
+  </div>
+</div>

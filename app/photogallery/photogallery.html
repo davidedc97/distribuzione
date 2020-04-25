@@ -1,0 +1,22 @@
+<!--<img src="https://icons-for-free.com/iconfiles/png/512/arrows+double+arrow+doublechevronleft+left+icon-1320185729725994033.png" style="top: 15px;left: 15px;width: 35px;height: auto;cursor:pointer;position: absolute;" ng-click="goBack()">-->
+<br><br>
+<link rel="stylesheet" href="photogallery/photogallery.css">
+<a href="#!/aggiungi-foto"><button ng-if="ruoloUtente=='ADMIN'">Aggiungi foto</button></a>
+<br><br>
+
+<!--<div class="gallery" ng-repeat="x in lista track by $index ">-->
+<!--    <a target="_blank" href="{{x.immagine}}">-->
+<!--        <img src="{{x.immagine}}"  width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{x.descrizione}}</div>-->
+<!--</div>-->
+<h2>Foto</h2>
+<div class="polaroids">
+
+    <div class="polaroid" ng-repeat="x in lista track by $index " >
+        <img src="{{x.immagine}}">
+        <p>{{x.descrizione}}</p>
+    </div>
+
+
+</div>

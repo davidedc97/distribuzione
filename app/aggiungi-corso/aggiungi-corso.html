@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="aggiungi-corso/aggiungi-corso.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.aggiungiCorso}}</h2>
+<br>
+<div class="card w-75 mx-auto sm-screen">
+  <div class="card-body">
+    <form name="form">
+      <label class="float-left" style="color:red; text-align:left" >* {{labelCampi.obbligatorio}}</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.titolo}}</span>
+        </div>
+        <input name="titolo" ng-model="titolo" ng-pattern="validaTitolo.regExp" required type="text" class="form-control" placeholder={{labelCampi.titolo}} aria-describedby="basic-addon1">
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.descrizione}}</span>
+        </div>
+        <input name="descrizione" ng-model="descrizione" ng-pattern="validaDescrizione.regExp" required type="text" class="form-control" placeholder={{labelCampi.descrizione}} aria-describedby="basic-addon1">
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.durata}}</span>
+        </div>
+        <input name="durata" ng-model="durata" ng-pattern="validaDurata.regExp" required type="number" ng-min=0 class="form-control" placeholder={{labelCampi.durata}} aria-describedby="basic-addon1">
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text">{{labelCampi.aula}}</label>
+        </div>
+        <select ng-model="aula" class="custom-select" required>
+          <option selected>{{labelCampi.scegli}}</option>
+          <option ng-repeat="x in listaAule track by $index">{{x}}</option>
+        </select>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text">{{labelCampi.dataInizio}}</label>
+        </div>
+        <div class="w-75">
+          <input name="dataInizio" ng-model="dataInizio" id="dataInizio" required readonly type="text" class="form-control datepicker">
+        </div>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text">{{labelCampi.dataFine}}</label>
+        </div>
+        <div class="w-75">
+          <input name="dataFine" ng-model="dataFine" id="dataFine" required readonly type="text" class="form-control datepicker">
+        </div>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.modalitaFormative}}</span>
+        </div>
+        <textarea name=modalitaFormative ng-model="modalitaFormative" required type="text" class="form-control" placeholder="{{labelCampi.modalitaFormative}}"></textarea>
+        <label style="color:red">&nbsp*</label>
+      </div>
+
+      <button class="btn btn-primary" ng-click="aggiungi()">{{labelCampi.aggiungiBtn}}</button>
+      &nbsp
+      <button class="btn btn-primary" ng-click="annulla()">{{labelCampi.annullaBtn}}</button>
+      <br>
+      <div class="error" ng-show="form.$submitted && form.titolo.$touched && form.titolo.$error">
+        {{getErrorLabel(form.titolo.$name, form.titolo.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.descrizione.$touched && form.descrizione.$error">
+        {{getErrorLabel(form.descrizione.$name, form.descrizione.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.durata.$touched && form.durata.$error">
+        {{getErrorLabel(form.durata.$name, form.durata.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.modalitaFormative.$touched && form.modalitaFormative.$error">
+        {{getErrorLabel(form.modalitaFormative.$name, form.modalitaFormative.$error)}}
+      </div>
+      <div id="dateError" class="error" style="display:none">
+      </div>
+    </form>
+  </div>
+</div>

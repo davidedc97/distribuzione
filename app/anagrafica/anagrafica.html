@@ -1,0 +1,45 @@
+<!--<img src="https://icons-for-free.com/iconfiles/png/512/arrows+double+arrow+doublechevronleft+left+icon-1320185729725994033.png" style="top: 15px;left: 15px;width: 35px;height: auto;cursor:pointer;position: absolute;" ng-click="goBack()">-->
+<link rel="stylesheet" href="anagrafica/anagrafica.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.anagrafica}}</h2>
+<br>
+<div class="card w-75 mx-auto">
+  <div class="card-body text-left">
+    <div class="row">
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.ragioneSociale}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.ragioneSociale}}</div>
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.partitaIva}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.partitaIva}}</div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.codiceRea}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.codiceRea}}</div>
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.indirizzo}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.indirizzo}}</div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.civico}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.civico}}</div>
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.cap}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.cap}}</div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.citta}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.citta}}</div>
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.provincia}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.provincia}}</div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-2 font-weight-bold">{{labelCampi.stato}}:</div>
+      <div class="col-6 col-md-4">{{anagrafica.stato}}</div>
+      <!--
+      <div class="col-6 col-md-2 strong">{{labelCampi.cap}}:</div>
+      <div class="col-6 col-md-4">00177</div>
+      -->
+    </div>
+    <br>
+    <div style="text-align:center">
+      <button ng-if="ruoloUtente==ADMIN" class="btn btn-primary" ng-click="modificaAnagrafica()">{{labelCampi.modificaBtn}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+div.aggiungi-recapito-wrapper{
+  margin-left: 0em;
+}
+
+.aggiungi-recapito{
+  width: 50%;
+  margin: 0 auto;
+  height: 5em;
+  display: inline-block;
+}
+
+.input-wrapper{
+  display: block;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  height: auto;
+}
+
+.input-wrapper input{
+  width: 3em;
+  height: 30px;
+}
+
+.input-wrapper select{
+  height: 30px;
+}
+
+.error{
+  color: red;
+}

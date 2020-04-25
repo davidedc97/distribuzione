@@ -1,0 +1,33 @@
+div.modifica-recapito-wrapper{
+  margin-left: 0em;
+}
+
+.modifica-recapito{
+  width: 50%;
+  margin: 0 auto;
+  height: 5em;
+  display: inline-block;
+}
+
+.input-wrapper{
+  text-align: left;
+  display: block;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  height: auto;
+}
+
+.input-wrapper input{
+  text-align: left;
+  width: 3em;
+  height: 30px;
+}
+
+.input-wrapper select{
+  height: 30px;
+}
+
+.error{
+  color: red;
+  text-align: left;
+}

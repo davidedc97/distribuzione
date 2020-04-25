@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="aggiungi-aula/aggiungi-aula.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.aggiungiAula}}</h2>
+<br>
+<div class="card w-75 mx-auto">
+  <div class="card-body">
+    <form name="form">
+      <label class="float-left" style="color:red" >* {{labelCampi.obbligatorio}}</label>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.descrizione}}</span>
+        </div>
+        <input name="descrizione" ng-model="descrizione" ng-pattern="validaDescrizione.regExp" type="text" class="form-control" placeholder={{labelCampi.descrizione}}>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.numero}}</span>
+        </div>
+        <input name="numero" ng-model="numero" ng-pattern="validaNumero.regExp" required type="text" class="form-control" placeholder={{labelCampi.numero}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.postiMax}}</span>
+        </div>
+        <input name="postiMax" ng-model="postiMax" ng-pattern="validaPostiMax.regExp" required type="number" ng-min="0" class="form-control" placeholder={{labelCampi.postiMax}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.numeroCivico}}</span>
+        </div>
+        <input name="numeroCivico" ng-model="numeroCivico" ng-pattern="validaCivico.regExp" required type="number" class="form-control" placeholder={{labelCampi.numeroCivico}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.cap}}</span>
+        </div>
+        <input name="cap" ng-model="cap" ng-pattern="validaCap.regExp" type="text" required minlength="5" maxlength="5" class="form-control" placeholder={{labelCampi.cap}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.piano}}</span>
+        </div>
+        <input name="piano" type="number" ng-model="piano" ng-pattern="validaPiano.regExp" required class="form-control" placeholder={{labelCampi.piano}}>
+        <label style="color:red">&nbsp*</label>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">{{labelCampi.note}}</span>
+        </div>
+        <input name="note" ng-model="note" ng-pattern="validaNote.regExp" type="text" class="form-control" placeholder={{labelCampi.note}}>
+      </div>
+
+      <button class="btn btn-primary" ng-click="aggiungi()">{{labelCampi.aggiungiBtn}}</button>
+      <button class="btn btn-primary" ng-click="annulla()">{{labelCampi.annullaBtn}}</button>
+      <br><br>
+      <div class="error" ng-show="form.$submitted && form.descrizione.$touched && form.descrizione.$error">
+        {{getErrorLabel(form.descrizione.$name, form.descrizione.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.numero.$touched && form.numero.$error">
+        {{getErrorLabel(form.numero.$name, form.numero.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.postiMax.$touched && form.postiMax.$error">
+        {{getErrorLabel(form.postiMax.$name, form.postiMax.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.numeroCivico.$touched && form.numeroCivico.$error">
+        {{getErrorLabel(form.numeroCivico.$name, form.numeroCivico.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.cap.$touched && form.cap.$error">
+        {{getErrorLabel(form.cap.$name, form.cap.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.piano.$touched && form.piano.$error">
+        {{getErrorLabel(form.piano.$name, form.piano.$error)}}
+      </div>
+      <div class="error" ng-show="form.$submitted && form.note.$touched && form.note.$error">
+        {{getErrorLabel(form.note.$name, form.note.$error)}}
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<!--<img src="https://icons-for-free.com/iconfiles/png/512/arrows+double+arrow+doublechevronleft+left+icon-1320185729725994033.png" style="top: 15px;left: 15px;width: 35px;height: auto;cursor:pointer;position: absolute;" ng-click="goBack()">-->
+<link rel="stylesheet" href="aule/aule.css">
+<br>
+<h2 class="font-weight-bold">{{labelCampi.aule}}</h2>
+<br>
+<button ng-if="ruoloUtente=='ADMIN'" class="btn btn-primary" ng-click="aggiungiAula()">{{labelCampi.aggiungiAulaBtn}}</button>
+&nbsp
+<button ng-if="ruoloUtente=='ADMIN'" class="btn btn-primary" ng-click="esportaAule()">{{labelCampi.esportaBtn}}</button>
+<br><br>
+
+<div class="card" ng-repeat="x in aule track by $index ">
+  <p class="trash-btn" ng-click="rimuovi(aule.indexOf(x))">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/OOjs_UI_icon_trash.svg/1024px-OOjs_UI_icon_trash.svg.png">
+  </p>
+  <p class="pencil-btn">
+    <a ng-click="modificaAula($index)"> <img src="https://simpleicon.com/wp-content/uploads/pencil.png"></a>
+  </p>
+  <div class="card-body text-left">
+    <div class="row" ng-if="x.descrizione!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.descrizione}}:</div>
+      <div class="col-6 col-md-6">{{x.descrizione}}</div>
+    </div>
+    <div class="row" ng-if="x.numero!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.numero}}:</div>
+      <div class="col-6 col-md-6">{{x.numero}}</div>
+    </div>
+    <div class="row" ng-if="x.postiMax!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.postiMax}}:</div>
+      <div class="col-6 col-md-6">{{x.postiMax}}</div>
+    </div>
+    <div class="row" ng-if="x.numeroCivico!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.numeroCivico}}:</div>
+      <div class="col-6 col-md-6">{{x.numeroCivico}}</div>
+    </div>
+    <div class="row" ng-if="x.oreLavorative!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.oreLavorative}}:</div>
+      <div class="col-6 col-md-6">{{x.oreLavorative}}</div>
+    </div>
+    <div class="row" ng-if="x.cap!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.cap}}:</div>
+      <div class="col-6 col-md-6">{{x.cap}}</div>
+    </div>
+    <div class="row" ng-if="x.piano!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.piano}}:</div>
+      <div class="col-6 col-md-6">{{x.piano}}</div>
+    </div>
+    <div class="row" ng-if="x.note!=null">
+      <div class="col-6 col-md-6 font-weight-bold">{{labelCampi.note}}:</div>
+      <div class="col-6 col-md-6">{{x.note}}</div>
+    </div>
+  </div>
+</div>
+<br><br>
