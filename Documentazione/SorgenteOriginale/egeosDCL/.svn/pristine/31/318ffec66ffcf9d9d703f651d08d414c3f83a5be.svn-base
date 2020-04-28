@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gestione Contesti</title>
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.css">
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+	<script src="js/jquery.mobile-1.4.3/jquery.ui.datepicker.js"></script>
+	<script id="mobile-datepicker" src="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.js"></script>
+<!-- OPENLAYERS.MOBILE -->
+	<link rel="stylesheet" href="js/openlayers/style.mobile.css" type="text/css">
+	<link rel="stylesheet" href="js/openlayers/style.mobile-jq.css" type="text/css">
+	<script type="text/javascript" src="js/openlayers/OpenLayers.js"></script>	
+<!-- LOCAL -->	
+	<script type="text/javascript" src="js/mobile-base.js"></script>
+	<script type="text/javascript" src="js/mobile-jq.js"></script>
+</head>
+<body>
+
+<!-- Pagina Territorio -->
+	<div data-role="page" id="ter-ctx">
+		<div data-role="header" data-theme="a">
+			<h1>Territorio</h1>
+		</div>
+		<div data-role="content">
+			<div id="map"></div>
+		</div>
+		<div data-role="navbar" data-iconpos="top">
+			<ul>
+				<li><a href="#dett-ctx" id="pref-m" data-theme="a"
+					data-transition="slidedown">Dettaglio</a></li>
+				<li><a href="#snaz-ctx" id="pref-m" data-theme="a"
+					data-transition="slidedown">Socio nazionale</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+<!-- Pagina Recupero Contesto-->
+	<div data-role="page" id="rec-ctx">
+		<div data-role="header" data-theme="a">
+			<h1>Recupero Contesto</h1>
+		</div>
+		<div data-role="content">
+			<form>
+				<ul data-role="listview" data-inset="true">
+					<li class="ui-field-contain">
+						<label for="sel-ctx-a" class="select">Elenco Contesti: </label> 
+						<select name="sel-ctx-a" id="sel-ctx-a" data-native-menu="false" data-icon="grid" data-iconpos="left" data-mini="true">
+						    <option>Seleziona un unico contesto</option>
+						        <option value="0">Controllo Refresh 2011</option>
+						        <option value="1">Controllo Refresh 2007</option>
+						    </optgroup>
+						</select>
+					</li>
+					<li class="ui-field-contain">
+						<label for="sel-ter-a" class="select">Territorio: </label> 
+						<select name="sel-ter-a" id="sel-ter-a" multiple="multiple" data-native-menu="false" data-icon="grid" data-iconpos="left" data-mini="true">
+						    <option>Scegliere le province da recuperare</option>
+						    <optgroup label="TRENTO">
+						        <option value="0">Bolzazno</option>
+						        <option value="1">Trento</option>
+						    </optgroup>
+						    <optgroup label="LAZIO">
+						        <option value="4">Roma</option>
+						        <option value="5">Viterbo</option>
+						        <option value="5">Frosinone</option>
+						    </optgroup>
+					    	<optgroup label="PUGLIA">
+						        <option value="4">Bari</option>
+						        <option value="5">Foggia</option>
+						    </optgroup>						    
+						</select>
+					</li>
+					<li class="ui-field-contain">
+						<label for="soc-naz-a" class="soc-naz-a">Socio Nazionale: </label> 
+						<select name="soc-naz-a" id="soc-naz-a" multiple="multiple" data-native-menu="false" data-icon="grid" data-iconpos="left" data-mini="true">
+						    <option>Scegliere i soci nazionali</option>
+						    <optgroup label="TELESPAZIO">
+						        <option value="0">Marco Bianchi</option>
+						        <option value="1">Luigi Rossi</option>
+						        <option value="1">Giovanni Verdi</option>
+						    </optgroup>
+						    <optgroup label="AUSELDA">
+						        <option value="4">Romano Bruno</option>
+						        <option value="5">Antonio Primo</option>
+						        <option value="5">Massimo Grande</option>
+						    </optgroup>
+					    	<optgroup label="AUTOMAZIONE PIEMONTE">
+						        <option value="4">Piero Sandri</option>
+						        <option value="5">Luigi Scarpa</option>
+						    </optgroup>						    
+						</select>
+					</li>
+					<li class="ui-field-contain">
+						<label for="ref-prov-a" class="select">Referenti Provinciali: </label> 
+						<select name="ref-prov-a" id="ref-prov-a" multiple="multiple" data-native-menu="false" data-icon="grid" data-iconpos="left" data-mini="true">
+						    <option>Scegliere i referenti provinciale</option>
+						    <optgroup label="TRENTO">
+						        <option value="0">Bolzazno</option>
+						        <option value="1">Trento</option>
+						    </optgroup>
+						    <optgroup label="LAZIO">
+						        <option value="4">Roma</option>
+						        <option value="5">Viterbo</option>
+						        <option value="5">Frosinone</option>
+						    </optgroup>
+					    	<optgroup label="PUGLIA">
+						        <option value="4">Bari</option>
+						        <option value="5">Foggia</option>
+						    </optgroup>						    
+						</select>
+					</li>
+					
+				</ul>
+			</form>
+		</div>
+		<div data-role="navbar" data-iconpos="top">
+			<ul>
+				<!--<li><a href="#ter-ctx" id="pref-m" data-theme="a" data-transition="slidedown">Territorio</a></li> -->
+				<li><a href="#dett-ctx" id="pref-m" data-theme="a"
+					data-transition="slidedown">Dettaglio Contesto</a></li>
+			</ul>
+		</div>
+	</div>
+	
+<!-- Pagina Dettaglio Contesto-->
+	<div data-role="page" id="dett-ctx">
+		<div data-role="header" data-theme="a">
+			<h1>Dettaglio Contesto</h1>
+		</div>
+		<div data-role="content">
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name" id="txt-name" value=""
+					placeholder="Codice elenco" />
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="txt-name-2" value=""
+					placeholder="Descrizione" />
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="txt-name-2" value=""
+					placeholder="Numero elenco" />
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="txt-name-2" value=""
+					placeholder="Campagna" />
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="txt-name-2" value=""
+					placeholder="Tipo lavorazione" />
+			</div>
+			<!-- 				<select name="select-choice-8" id="select-choice-8" multiple="multiple" data-native-menu="false" data-icon="grid" data-iconpos="left"> -->
+			<select name="select-choice-a" id="select-choice-a"
+				data-native-menu="false" data-icon="grid" data-iconpos="left">
+				<option>Tipo lavorazione:</option>
+				<option value="-1">Nessuna</option>
+				<option value="0">Collaudo</option>
+				<option value="1">Controllo</option>
+				<option value="2">Fotointerpretazione</option>
+			</select>
+		</div>
+		<div data-role="navbar" data-iconpos="top">
+			<ul>
+				<li><a href="#rec-ctx" id="pref-m" data-theme="a"
+					data-transition="slidedown">Recupero</a></li>
+				<li><a href="#ter-ctx" id="pref-m" data-theme="a"
+					data-transition="slidedown">Territorio</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Socio Nazionale -->
+	<div data-role="page" id="snaz-ctx">
+		<div data-role="header" data-theme="a">
+			<h1>Socio Nazionale</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" data-inset="false">
+				<li class="ui-field-contain"><label for="name2">Text
+						Input:</label> <input name="name2" id="name2" value=""
+					data-clear-btn="true" type="text"></li>
+				<li class="ui-field-contain"><label for="textarea2">Textarea:</label>
+					<textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
+				</li>
+				<li class="ui-field-contain"><label for="flip2">Flip
+						switch:</label> <select name="flip2" id="flip2" data-role="slider">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+				</select></li>
+				<li class="ui-field-contain"><label for="slider2">Slider:</label>
+					<input name="slider2" id="slider2" value="0" min="0" max="100"
+					data-highlight="true" type="range"></li>
+				<li class="ui-field-contain"><label for="select-choice-1"
+					class="select">Choose shipping method:</label> <select
+					name="select-choice-1" id="select-choice-1">
+						<option value="standard">Standard: 7 day</option>
+						<option value="rush">Rush: 3 days</option>
+						<option value="express">Express: next day</option>
+						<option value="overnight">Overnight</option>
+				</select></li>
+				<li class="ui-body ui-body-b">
+					<fieldset class="ui-grid-a">
+						<div class="ui-block-a">
+							<button type="submit" class="ui-btn ui-corner-all ui-btn-a">Cancel</button>
+						</div>
+						<div class="ui-block-b">
+							<button type="submit" class="ui-btn ui-corner-all ui-btn-a">Submit</button>
+						</div>
+					</fieldset>
+				</li>
+			</ul>
+			<ul data-role="listview" data-dividertheme="d">
+				<li data-role="list-divider">Location</li>
+				<li data-role="fieldcontain"><label for="fliplocate">Get my position</label> <select name="fliplocate" id="fliplocate"
+					data-role="slider" data-track-theme="a" data-theme="a" data-mini="true">
+						<option value="0">Off</option>
+						<option value="1">On</option>
+				</select></li>
+				<li data-role="fieldcontain"><label for="flipview">Show my position</label> <select width="50" name="flipview" id="flipview"
+					data-role="slider" data-track-theme="a" data-theme="a"
+					data-mini="true">
+						<option value="0">Off</option>
+						<option value="1">On</option>
+				</select></li>
+				<li data-role=list-divider>Position</li>
+				<li data-role="fieldcontain">
+					<h3>Latitude:</h3>
+					<p id="latitude-out" name="latitude-out">0.00</p>
+				</li>
+				<li data-role="fieldcontain">
+					<h3>Longitude:</h3>
+					<p id="longitude-out" name="longitude-out">0.00</p>
+				</li>
+				<li data-role="fieldcontain">
+					<h3>Altitude:</h3>
+					<p id="altitude-out" name="altitude-out">0.00</p>
+				</li>
+				<li data-role="fieldcontain">
+					<h3>Accuracy:</h3>
+					<p id="accuracy-out" name="accuracy-out">0</p>
+				</li>
+				<li data-role="fieldcontain">
+					<h3>Altitude Accuracy:</h3>
+					<p id="altitude-accuracy-out" name="altitude-accuracy-out">0</p>
+				</li>
+				<li data-role="fieldcontain">
+					<h3>Heading:</h3>
+					<p id="heading-out" name="heading-out">0</p>
+				</li>
+				<li data-role="fieldcontain">
+					<h3>Speed:</h3>
+					<p id="speed-out" name="speed-out">0</p>
+				</li>
+				<li data-role="fieldcontain">
+					<h3>Timestamp</h3>
+					<p id="timestamp-out" name="timestamp-out">0</p>
+				</li>
+			</ul>
+		</div>
+		<div data-role="navbar" data-iconpos="top">
+			<ul>
+				<li><a href="#ter-ctx" id="pref-m" data-theme="a"
+					data-transition="slidedown">Territorio</a></li>
+				<li><a href="#" id="pref-m" data-theme="a"
+					data-transition="slidedown">Conferma</a></li>
+			</ul>
+		</div>
+	</div>
+
+</body>
+</html>

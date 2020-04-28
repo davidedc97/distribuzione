@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Recupero Contesto</title>
+	<link href="css/contesti.css" rel="stylesheet" type="text/css" />
+<!--JS EXT-->
+    <script type="text/javascript" src="js/ext-js/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="js/ext-js/ext-all-debug.js"></script>
+    <script type="text/javascript" src="js/ext-js/ext-table.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/ext-js/resources/css/ext-all.css" />
+    <!--link rel="stylesheet" type="text/css" href="/MPPControllerIST/script/ext-js/mppistlist.css" /-->	
+</head>
+<body class="bodyLive">
+    <div class="divtop">
+    	<div class="bar-xp"></div>
+    </div>
+	<div class="divcenter">
+		<div id="bag-table" style="padding-top:2px; padding-left:2px;">
+			<table cellspacing="0" cellpadding="0" id="the-table">
+				<thead>
+				<tr>
+					<th style="width:40px;">&nbsp;</th>
+					<th style="width:130px;">Identificativo Elenco</th>
+					<th style="width:50px;">Descrizione</th>
+					<th style="width:60px;">Numero elenco</th>
+					<th style="width:300px;">Campagna</th>
+				</tr>
+				</thead>
+				<tbody>
+						<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>				
+						<tr>
+							<td><input title="fksel-1-x" type="checkbox" name="fksel" id="fksel-1%>" value="<%=mppvalue.getIdmppist()%>" usemap="" onclick=""/></td>
+							<td>REF2013</td>
+							<td>Lavorazioni Refresh 2013</td>
+							<td>31803853</td>
+							<td>2013</td>
+						</tr>
+						<tr>
+							<td><input title="fksel-1-x" type="checkbox" name="fksel" id="fksel-1%>" value="<%=mppvalue.getIdmppist()%>" usemap="" onclick=""/></td>
+							<td>REF2013</td>
+							<td>Lavorazioni Refresh 2013</td>
+							<td>31803853</td>
+							<td>2013</td>
+						</tr>
+						<tr>
+							<td><input title="fksel-1-x" type="checkbox" name="fksel" id="fksel-1%>" value="<%=mppvalue.getIdmppist()%>" usemap="" onclick=""/></td>
+							<td>REF2013</td>
+							<td>Lavorazioni Refresh 2013</td>
+							<td>31803853</td>
+							<td>2013</td>
+						</tr>
+						
+						
+				</tbody>
+			</table>
+				<table cellspacing="0" cellpadding="0" >
+				<thead>
+				<tr>
+					<th>&nbsp;</th>
+					<th>Identificativo Elenco</th>
+					<th>Descrizione</th>
+					<th>Numero elenco</th>
+					<th style="width:300px;">Campagna</th>
+				</tr>
+				</thead>
+				<tbody>
+						<tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>				
+						<tr>
+							<td><input title="fksel-1-x" type="checkbox" name="fksel" id="fksel-1%>" value="<%=mppvalue.getIdmppist()%>" usemap="" onclick=""/></td>
+							<td>REF2013</td>
+							<td>Lavorazioni Refresh 2013</td>
+							<td>31803853</td>
+							<td>2013</td>
+						</tr>
+						<tr>
+							<td><input title="fksel-1-x" type="checkbox" name="fksel" id="fksel-1%>" value="<%=mppvalue.getIdmppist()%>" usemap="" onclick=""/></td>
+							<td>REF2013</td>
+							<td>Lavorazioni Refresh 2013</td>
+							<td>31803853</td>
+							<td>2013</td>
+						</tr>
+						<tr>
+							<td><input title="fksel-1-x" type="checkbox" name="fksel" id="fksel-1%>" value="<%=mppvalue.getIdmppist()%>" usemap="" onclick=""/></td>
+							<td>REF2013</td>
+							<td>Lavorazioni Refresh 2013</td>
+							<td>31803853</td>
+							<td>2013</td>
+						</tr>
+						
+						
+				</tbody>
+			</table>
+		</div>
+	</div>	
+</body>
+</html>

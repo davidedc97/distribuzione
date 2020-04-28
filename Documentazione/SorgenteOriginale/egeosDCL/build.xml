@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="egeosDCL">
+    <property environment="env"/>
+    <property name="M2_REPO" value="../../../.m2/repository"/>
+    <property name="ECLIPSE_HOME" value="../../../../../Eclipse/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="../../../.m2/repository/com/google/gwt/gwt-servlet/2.1.0/gwt-servlet-2.1.0.jar"/>
+        <pathelement location="../../../.m2/repository/com/google/gwt/gwt-user/2.1.0/gwt-user-2.1.0.jar"/>
+        <pathelement location="../../../.m2/repository/com/allen-sauer/gwt/log/gwt-log/3.0.4/gwt-log-3.0.4.jar"/>
+        <pathelement location="../../../.m2/repository/com/smartgwt/smartgwt/3.0/smartgwt-3.0.jar"/>
+        <pathelement location="../../../.m2/repository/commons-httpclient/commons-httpclient/3.0/commons-httpclient-3.0.jar"/>
+        <pathelement location="../../../.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
+        <pathelement location="../../../.m2/repository/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar"/>
+        <pathelement location="../../../.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar"/>
+        <pathelement location="../../../.m2/repository/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/oracle/ojdbc6/11.2.0.3/ojdbc6-11.2.0.3.jar"/>
+        <pathelement location="../../../.m2/repository/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar"/>
+        <pathelement location="../../../.m2/repository/com/googlecode/gwt/crypto/gwt-crypto/1.0.2/gwt-crypto-1.0.2.jar"/>
+        <pathelement location="../../../.m2/repository/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
+        <pathelement location="../../../.m2/repository/com/itextpdf/itextpdf/5.0.6/itextpdf-5.0.6.jar"/>
+        <pathelement location="../../../.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar"/>
+        <pathelement location="../../../.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar"/>
+        <pathelement location="../../../.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/poi/poi/3.10.1/poi-3.10.1.jar"/>
+        <pathelement location="../../../.m2/repository/dom4j/dom4j/1.1/dom4j-1.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/poi/poi-ooxml/3.10.1/poi-ooxml-3.10.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/poi/poi-ooxml-schemas/3.10.1/poi-ooxml-schemas-3.10.1.jar"/>
+        <pathelement location="../../../.m2/repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar"/>
+        <pathelement location="../../../.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar"/>
+    </path>
+    <path id="egeosDCL.classpath">
+        <pathelement location="target/test-classes"/>
+        <pathelement location="target/egeosDCL-1.0/WEB-INF/classes"/>
+        <pathelement location="${M2_REPO}/com/google/gwt/gwt-servlet/2.1.0/gwt-servlet-2.1.0.jar"/>
+        <pathelement location="${M2_REPO}/com/google/gwt/gwt-user/2.1.0/gwt-user-2.1.0.jar"/>
+        <pathelement location="${M2_REPO}/com/smartgwt/smartgwt/3.0/smartgwt-3.0.jar"/>
+        <pathelement location="${M2_REPO}/commons-httpclient/commons-httpclient/3.0/commons-httpclient-3.0.jar"/>
+        <pathelement location="${M2_REPO}/junit/junit/3.8.1/junit-3.8.1.jar"/>
+        <pathelement location="${M2_REPO}/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar"/>
+        <pathelement location="${M2_REPO}/commons-codec/commons-codec/1.2/commons-codec-1.2.jar"/>
+        <pathelement location="${M2_REPO}/commons-fileupload/commons-fileupload/1.2.2/commons-fileupload-1.2.2.jar"/>
+        <pathelement location="${M2_REPO}/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar"/>
+        <pathelement location="${M2_REPO}/com/googlecode/gwt/crypto/gwt-crypto/1.0.2/gwt-crypto-1.0.2.jar"/>
+        <pathelement location="${M2_REPO}/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
+        <pathelement location="${M2_REPO}/com/itextpdf/itextpdf/5.0.6/itextpdf-5.0.6.jar"/>
+        <pathelement location="${M2_REPO}/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar"/>
+        <pathelement location="${M2_REPO}/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar"/>
+        <pathelement location="${M2_REPO}/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/test-classes"/>
+        <mkdir dir="target/egeosDCL-1.0/WEB-INF/classes"/>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/resources">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/egeosDCL-1.0/WEB-INF/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/egeosDCL-1.0/WEB-INF/classes">
+            <fileset dir="src/main/resources">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/test-classes"/>
+        <delete dir="target/egeosDCL-1.0/WEB-INF/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/test/java"/>
+            <src path="src/test/resources"/>
+            <exclude name="**"/>
+            <classpath refid="egeosDCL.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/egeosDCL-1.0/WEB-INF/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/java"/>
+            <src path="src/main/resources"/>
+            <exclude name="**"/>
+            <classpath refid="egeosDCL.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

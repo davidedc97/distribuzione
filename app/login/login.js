@@ -85,89 +85,9 @@ angular.module('myApp.login', ['ngRoute'])
     }*/
   }
 
-  $scope.login2 = function(){
-    var xhr = new XMLHttpRequest();
-    var url = "http://localhost:8085/egeosAicFormWS/servletWSDecrypt";
-
-    /*xhr.onreadystatechange = function() {
-      if (this.readyState == 4) {
-        console.log("LOADED:")
-        console.log(this.status);
-        console.log(this.statusText);
-        console.log(this.response);
-      }
-    };*/
-
-    xhr.onload = function() {
-      console.log("Loaded:");
-      console.log(this.status);
-      console.log(this.statusText);
-      console.log(this.response);
-    };
-
-    xhr.onerror = function(){
-      console.log("Error:");
-      console.log(this.status);
-      console.log(this.statusText);
-      console.log(this.response);
-    }
-
-    xhr.open("POST", url);
-    let body = {
-      username: "pippo",
-      password: "pwd"
-    }
-    let json = JSON.stringify(body);
-    let body64 = btoa(json);
-    console.log("BODY: ");
-    console.log(body);
-    console.log("JSON: ");
-    console.log(json);
-    console.log("BODY64: ");
-    console.log(body64);
-    xhr.send(body64);
-  };
-
-  $scope.login3 = function(){
-    var xhr = new XMLHttpRequest();
-    var url = "http://localhost:8085/egeosAicFormWS/servletWSDecrypt";
-
-    xhr.onreadystatechange = function() {
-      console.log("CHANGING STATE:");
-      console.log("Ready state: " + this.readyState);
-      console.log("Status: " + this.status);
-      console.log("Status text: " + this.statusText);
-      console.log("Response: " + this.response);
-      console.log(xhr);
-    };
-
-    xhr.onload = function() {
-      console.log("LOADED:");
-      console.log("Ready state: " + this.readyState);
-      console.log("Status: " + this.status);
-      console.log("Status text: " + this.statusText);
-      console.log("Response: " + this.response);
-    };
-
-    xhr.onerror = function(){
-      console.log("ERROR:");
-      console.log("Ready state: " + this.readyState);
-      console.log("Status: " + this.status);
-      console.log("Status text: " + this.statusText);
-      console.log("Response: " + this.response);
-      console.log(xhr);
-    }
-
-    xhr.onabort = function(){
-      console.log("PORCODDIO HA ABORTITO");
-    }
-
-    xhr.open("GET", url);
-    xhr.withCredentials = true;
-    //xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
-    //xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-
-    xhr.send();
+  $scope.loginFinto = function(){
+    console.log(ruolo);
+    window.location.href = "#!/contesti";
   }
 
 

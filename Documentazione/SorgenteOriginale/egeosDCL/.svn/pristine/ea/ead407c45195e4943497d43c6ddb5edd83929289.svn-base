@@ -1,0 +1,211 @@
+<html>
+
+<head>
+<title>Gestione Soci provinciali</title>
+<style>
+<!-- /* Font Definitions */
+@font-face {
+	font-family: Verdana;
+	panose-1: 2 11 6 4 3 5 4 4 2 4;
+}
+/* Style Definitions */
+p.MsoNormal,li.MsoNormal,div.MsoNormal {
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	font-size: 12.0pt;
+	font-family: "Times New Roman";
+}
+
+@page Section1 {
+	size: 595.3pt 841.9pt;
+	margin: 70.85pt 2.0cm 2.0cm 2.0cm;
+}
+
+div.Section1 {
+	page: Section1;
+}
+-->
+</style>
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.css">
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+	<script src="js/jquery.mobile-1.4.3/jquery.ui.datepicker.js"></script>
+	<script id="mobile-datepicker" src="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.js"></script>
+<!-- OPENLAYERS.MOBILE -->
+	<link rel="stylesheet" href="js/openlayers/style.mobile.css" type="text/css">
+	<link rel="stylesheet" href="js/openlayers/style.mobile-jq.css" type="text/css">
+	<script type="text/javascript" src="js/openlayers/OpenLayers.js"></script>	
+<!-- LOCAL -->	
+</head>
+
+<body lang=IT>
+
+	<div class=Section1>
+
+		<table class=MsoTableContemporary border=0 cellspacing=0 cellpadding=0
+			style='border-collapse: collapse'>
+			<tr>
+				<td width=652 colspan=5 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<b><span style='font-size: 10.0pt; font-family: Verdana'>Gestione
+								Soci provinciali</span></b>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.8pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>NOME</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>COGNOME</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ENTE</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>SOCI
+							PROVINCIALI</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.8pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Marco</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Bianchi</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Telespazio</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>
+						<select id="s-tps">
+  							<option value="-1">&nbsp;</option>
+  							<option value="0">Luigi Rossi</option>
+  							<option value="1">Giovanni Verdi</option>
+						</select>
+						</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><img alt="" src="pencil.png" /></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.8pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Romano</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Bruno</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Auselda</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>
+						<select id="s-asd">
+							<option value="-1">&nbsp;</option>
+  							<option value="0">Antonio Primo</option>
+  							<option value="1">Massimo Grande</option>
+						</select>
+						</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><img alt="" src="pencil.png" /></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.8pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Antonio</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Sandri</span>
+					</p>
+				</td>
+				<td width=93 valign=top
+					style='width: 69.85pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>AP</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>
+						<select id="s-asd">
+							<option value="-1">&nbsp;</option>
+  							<option value="0">Fabio Grande</option>
+  							<option value="1">Luigi Scarpa</option>
+						</select>
+						</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><img alt="" src="pencil.png" /></span>
+					</p>
+				</td>
+			</tr>
+		</table>
+		<p class=MsoNormal>&nbsp;</p>
+	
+	</div>
+
+</body>
+
+</html>

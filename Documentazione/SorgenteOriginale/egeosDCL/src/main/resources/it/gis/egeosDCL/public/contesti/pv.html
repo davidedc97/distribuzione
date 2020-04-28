@@ -1,0 +1,1057 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<style>
+<!-- /* Font Definitions */
+@font-face {
+	font-family: Verdana;
+	panose-1: 2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset: 0;
+	mso-generic-font-family: swiss;
+	mso-font-pitch: variable;
+	mso-font-signature: 536871559 0 0 0 415 0;
+}
+/* Style Definitions */
+p.MsoNormal,li.MsoNormal,div.MsoNormal {
+	mso-style-parent: "";
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	mso-pagination: widow-orphan;
+	font-size: 12.0pt;
+	font-family: "Times New Roman";
+	mso-fareast-font-family: "Times New Roman";
+}
+
+@page Section1 {
+	size: 595.3pt 841.9pt;
+	margin: 70.85pt 2.0cm 2.0cm 2.0cm;
+	mso-header-margin: 35.4pt;
+	mso-footer-margin: 35.4pt;
+	mso-paper-source: 0;
+}
+
+div.Section1 {
+	page: Section1;
+}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabella normale";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableContemporary
+	{mso-style-name:"Tabella contemporanea";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:0;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:2.25pt solid white;
+	mso-border-insidev:2.25pt solid white;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableContemporaryFirstRow
+	{mso-style-name:"Tabella contemporanea";
+	mso-table-condition:first-row;
+	mso-tstyle-shading:white;
+	mso-tstyle-pattern:gray-20 black;
+	mso-tstyle-diagonal-down:0cm none windowtext;
+	mso-tstyle-diagonal-up:0cm none windowtext;
+	color:windowtext;
+	mso-ansi-font-weight:bold;
+	mso-bidi-font-weight:bold;}
+table.MsoTableContemporaryOddRow
+	{mso-style-name:"Tabella contemporanea";
+	mso-table-condition:odd-row;
+	mso-tstyle-shading:white;
+	mso-tstyle-pattern:gray-5 black;
+	mso-tstyle-diagonal-down:0cm none windowtext;
+	mso-tstyle-diagonal-up:0cm none windowtext;
+	color:windowtext;}
+table.MsoTableContemporaryEvenRow
+	{mso-style-name:"Tabella contemporanea";
+	mso-table-condition:even-row;
+	mso-tstyle-shading:white;
+	mso-tstyle-pattern:gray-20 black;
+	mso-tstyle-diagonal-down:0cm none windowtext;
+	mso-tstyle-diagonal-up:0cm none windowtext;
+	color:windowtext;}
+</style>
+<![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.css">
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+	<script src="js/jquery.mobile-1.4.3/jquery.ui.datepicker.js"></script>
+	<script id="mobile-datepicker" src="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.js"></script>
+<!-- OPENLAYERS.MOBILE -->
+	<link rel="stylesheet" href="js/openlayers/style.mobile.css" type="text/css">
+	<link rel="stylesheet" href="js/openlayers/style.mobile-jq.css" type="text/css">
+	<script type="text/javascript" src="js/openlayers/OpenLayers.js"></script>	
+<!-- LOCAL -->	
+	<script type="text/javascript" src="js/sc.js"></script>
+	<script type="text/javascript" >
+		alert("pippo");
+		init();
+	</script>
+</head>
+
+<body lang=IT style='tab-interval: 35.4pt'>
+
+	
+
+ 	<div style="width:55%;height: 1390px;left: 690px;top: 83px;border: 1px solid #6495ED;position: absolute;" id="map"></div>
+	
+
+	<div class=Section1>
+		
+		<a href="dett.html" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-right">Dettaglio Contesto</a>
+		<a href="gsc.html" class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-right">Assegna Socio al contesto</a>
+		
+		<p class=MsoNormal>
+			<o:p>&nbsp;</o:p>
+		</p>
+		
+		<table class=MsoTableContemporary border=0 cellspacing=0 cellpadding=0
+			style='border-collapse: collapse; mso-yfti-tbllook: 480; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: 2.25pt solid white; mso-border-insidev: 2.25pt solid white'>
+			<tr style='mso-yfti-irow: -1; mso-yfti-firstrow: yes'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center
+						style='text-align: center; mso-yfti-cnfc: 1'>
+						<b><span style='font-size: 10.0pt; font-family: Verdana'><br>
+								Province da Includere<o:p></o:p></span></b>
+					</p>
+					<p class=MsoNormal align=center
+						style='text-align: center; mso-yfti-cnfc: 1'>
+						<b><span style='font-size: 10.0pt; font-family: Verdana'><o:p>&nbsp;</o:p></span></b>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 0'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ABRUZZO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 1'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>AQULA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 2'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>CHIETI<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 3'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 4'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>AOSTA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 5'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>AOSTA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 6'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>BASILICATA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 7'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>MATERA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 8'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>POTENZA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 9'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>CALABRIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 10'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>COSENZA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 11'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>VIBO
+							VALENTIA<o:p></o:p>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 12'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 13'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>CAMPANIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 14'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>CASERTA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 15'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>SALERNO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 16'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 17'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>EMILIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 18'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>BOLOGNA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 19'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>FERRARA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 20'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 21'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>FRIULI<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 22'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>GORIZIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 23'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>PORDENONE<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 24'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 25'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>LAZIO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 26'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>FROSINONE<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 27'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ROMA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 28'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 29'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>LIGURIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 30'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>GENOVA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 31'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>IMPERIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 32'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 33'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>LOMBARDIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 34'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>BERGAMO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 35'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>MILANO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 36'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 37'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>MARCHE<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 38'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ANCONA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 39'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ASCOLI
+							PICENO<o:p></o:p>
+						</span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 40'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 41'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>PIEMONTE<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 42'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ALESSANDRIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 43'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ASTI<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 44'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 45'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>PUGLIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 46'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>BARI<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 47'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>FOGGIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 48'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 49'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>SARDEGNA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 50'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>CAGLIARI<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 51'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>NUORO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 52'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 53'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>SICILIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 54'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>AGRIGENTO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 55'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>CATANIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 56'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 57'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>TOSCANA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 58'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>AREZZO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 59'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>GROSSETO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 60'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 61'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>TRENTINO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 62'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>BOLZANO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 63'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>TRENTO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 64'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>UMBRIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 65'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>PERUGIA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 66'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>TERNI<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 67'>
+				<td width=652 colspan=2 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>VENETO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 68'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>BELLUNO<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 69'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><o:p><input type="checkbox" name="" value=""></o:p></span>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #CCCCCC; mso-shading: white; mso-pattern: gray-20 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 128'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>PADOVA<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+			<tr style='mso-yfti-irow: 70; mso-yfti-lastrow: yes'>
+				<td width=43 valign=top
+					style='width: 32.4pt; border: none; border-right: solid white 2.25pt; mso-border-top-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<u><span style='font-size: 10.0pt; font-family: Verdana'><o:p>
+									<span style='text-decoration: none'><input type="checkbox" name="" value=""></span>
+								</o:p></span></u>
+					</p>
+				</td>
+				<td width=609 valign=top
+					style='width: 456.5pt; border: none; mso-border-top-alt: solid white 2.25pt; mso-border-left-alt: solid white 2.25pt; background: #F2F2F2; mso-shading: white; mso-pattern: gray-5 black; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal style='mso-yfti-cnfc: 64'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>...<o:p></o:p></span>
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<p class=MsoNormal>
+			<o:p>&nbsp;</o:p>
+		</p>
+
+		<a href="dett.html" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-right">Dettaglio Contesto</a>
+		<a href="gsc.html" class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-right">Assegna Socio al contesto</a>
+		
+
+	</div>
+
+</body>
+
+</html>

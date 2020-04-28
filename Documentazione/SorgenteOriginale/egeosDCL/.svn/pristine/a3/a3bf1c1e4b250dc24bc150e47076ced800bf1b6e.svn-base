@@ -1,0 +1,13 @@
+it.gis.provaGis.client
+it.gis.provaGis.client.Layout
+it.gis.provaGis.client.Layout.LayoutObjects
+it.gis.provaGis.client.ctx
+it.gis.provaGis.client.map
+it.gis.provaGis.client.service
+it.gis.provaGis.client.utility
+it.gis.provaGis.server
+it.gis.provaGis.server.DAO
+it.gis.provaGis.server.DAOUtility
+it.gis.provaGis.server.servlet
+it.gis.provaGis.server.util
+it.gis.provaGis.shared

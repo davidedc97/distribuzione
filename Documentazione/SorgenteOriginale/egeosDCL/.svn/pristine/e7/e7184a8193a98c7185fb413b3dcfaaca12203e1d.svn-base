@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>it.gis.egeosDCL.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/egeosDCL/greet</url-pattern>
+  </servlet-mapping>
+   
+	<servlet>
+		<servlet-name>log4j-init</servlet-name>
+		<servlet-class>it.gis.egeosDCL.server.util.Log4jInit</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+
+	<servlet>
+		<servlet-name>Proxy</servlet-name>
+		<servlet-class>it.gis.egeosDCL.server.servlet.Proxy</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Proxy</servlet-name>
+		<url-pattern>/egeosDCL/Proxy</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>JSONService</servlet-name>
+		<servlet-class>it.gis.egeosDCL.server.servlet.JSONService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>JSONService</servlet-name>
+		<url-pattern>/egeosDCL/JSONService</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>csvFileUpload</servlet-name>
+		<servlet-class>it.gis.egeosDCL.server.servlet.CsvFileUpload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>csvFileUpload</servlet-name>
+		<url-pattern>/egeosDCL/csvFileUpload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ExportGridServlet</servlet-name>
+		<servlet-class>it.gis.egeosDCL.server.servlet.ExportGridServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ExportGridServlet</servlet-name>
+		<url-pattern>/egeosDCL/exportGrid</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RiepilogoEFAXLSServlet</servlet-name>
+		<servlet-class>it.gis.egeosDCL.server.servlet.RiepilogoEFAXLSServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RiepilogoEFAXLSServlet</servlet-name>
+		<url-pattern>/egeosDCL/RiepilogoEFAXLSServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DettaglioEFAXLSServlet</servlet-name>
+		<servlet-class>it.gis.egeosDCL.server.servlet.DettaglioEFAXLSServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DettaglioEFAXLSServlet</servlet-name>
+		<url-pattern>/egeosDCL/DettaglioEFAXLSServlet</url-pattern>
+	</servlet-mapping>
+	
+<filter>
+    <filter-name>CacheControl</filter-name>
+    <filter-class>it.gis.egeosDCL.server.servlet.CacheControlFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>CacheControl</filter-name>
+    <url-pattern>/egeosDCL/images/*</url-pattern>
+	<url-pattern>/egeosDCL/sc/skins/Enterprise/*</url-pattern>    
+</filter-mapping>	
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>

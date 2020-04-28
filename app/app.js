@@ -1,7 +1,7 @@
 'use strict';
 // Declare global variables accessible from all controllers
-var ruolo = "ADMIN";
-const ruoliAdmin = ["ADMIN", "AIC_ADMIN", "AIC_RESOURCE", "AD_CLIENTE"];
+var ruolo = "nazionale";
+const ruoli = ["nazionale", "nazionale-provinciale", "provinciale"];
 
 // Declare app level module which depends on views, and core components
 var myApp = angular.module('myApp', [
@@ -9,7 +9,7 @@ var myApp = angular.module('myApp', [
   'ngMaterial',
   'ngMessages',
   'myApp.login',
-  'myApp.lista-anagrafiche',
+  'myApp.contesti',
   'myApp.aggiungi-anagrafica',
   'myApp.home',
   'myApp.anagrafica',
@@ -56,7 +56,7 @@ myApp.factory('globalService', function() {
       if(res.includes("-")) res = res.replace("-", " ");
       return res;
     },
-    isAdmin: ruoliAdmin.includes(ruolo)
+    isAdmin: ruoli.includes(ruolo)
 
   };
 });

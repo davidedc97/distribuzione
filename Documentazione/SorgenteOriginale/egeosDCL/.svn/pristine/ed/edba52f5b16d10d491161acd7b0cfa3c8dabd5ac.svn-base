@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dettaglio Contesto</title>
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.css">
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+	<script src="js/jquery.mobile-1.4.3/jquery.ui.datepicker.js"></script>
+	<script id="mobile-datepicker" src="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.js"></script>
+<!-- OPENLAYERS.MOBILE -->
+	<link rel="stylesheet" href="js/openlayers/style.mobile.css" type="text/css">
+	<link rel="stylesheet" href="js/openlayers/style.mobile-jq.css" type="text/css">
+	<script type="text/javascript" src="js/openlayers/OpenLayers.js"></script>	
+<!-- LOCAL -->
+	<script type="text/javascript" src="js/sc.js"></script>	
+
+</head>
+<body>
+		<div data-role="content">
+		
+			<div data-role="header">Informazioni Preliminare Contesto Apllicativo</div>
+			
+			<a href="contesti.html" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-right">Recupera contesto</a>
+			<a href="gsc.html" class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-right">Assegna Socio al contesto</a>
+			<a href="pv.html" class="ui-btn ui-btn-inline ui-icon-location ui-btn-icon-right">Territorio</a>
+		
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name" id="txt-name" value=""
+					placeholder="Codice elenco" data-mini="true"/>
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="txt-name-2" value=""
+					placeholder="Descrizione" data-mini="true"/>
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="txt-name-2" value=""
+					placeholder="Numero elenco" data-mini="true"/>
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="txt-name-2" value=""
+					placeholder="Campagna" data-mini="true"/>
+			</div>
+			<!-- 				<select name="select-choice-8" id="select-choice-8" multiple="multiple" data-native-menu="false" data-icon="grid" data-iconpos="left"> -->
+			<select name="select-choice-a" id="select-choice-a"
+				data-native-menu="false" data-icon="grid" data-iconpos="left" data-mini="true">
+				<option>Tipo lavorazione:</option>
+				<option value="0">Collaudo</option>
+				<option value="1">Controllo</option>
+				<option value="2">Fotointerpretazione</option>
+			</select>
+			<a href="contesti.html" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-right">Recupera contesto</a>
+			<a href="gsc.html" class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-right">Assegna Socio al contesto</a>
+			<a href="pv.html" class="ui-btn ui-btn-inline ui-icon-location ui-btn-icon-right">Territorio</a>
+		</div>
+
+</body>
+</html>

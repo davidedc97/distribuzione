@@ -1,0 +1,856 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+
+<title>Recuperare un Contesto</title>
+<style>
+<!-- /* Font Definitions */
+@font-face {
+	font-family: Verdana;
+	panose-1: 2 11 6 4 3 5 4 4 2 4;
+}
+/* Style Definitions */
+p.MsoNormal,li.MsoNormal,div.MsoNormal {
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	font-size: 12.0pt;
+	font-family: "Times New Roman";
+}
+
+@page Section1 {
+	size: 595.3pt 841.9pt;
+	margin: 70.85pt 2.0cm 2.0cm 2.0cm;
+}
+
+div.Section1 {
+	page: Section1;
+}
+-->
+</style>
+<link rel="stylesheet"
+	href="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+<link rel="stylesheet"
+	href="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.css">
+<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.js"></script>
+<script type="text/javascript"
+	src="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+<script src="js/jquery.mobile-1.4.3/jquery.ui.datepicker.js"></script>
+<script id="mobile-datepicker"
+	src="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.js"></script>
+<!-- OPENLAYERS.MOBILE -->
+<link rel="stylesheet" href="js/openlayers/style.mobile.css"
+	type="text/css">
+<link rel="stylesheet" href="js/openlayers/style.mobile-jq.css"
+	type="text/css">
+<script type="text/javascript" src="js/openlayers/OpenLayers.js"></script>
+<!-- LOCAL -->
+<script type="text/javascript" src="js/sc.js"></script>
+</head>
+
+<body>
+
+	<div class=Section1>
+		<p class=MsoNormal align=center style='text-align: center'>&nbsp;</p>
+		<a href="dett.html" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-right">Dettaglio Contesto</a>
+		<a href="gsc.html" class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-right">Assegna Socio al contesto</a>
+		<a href="pv.html" class="ui-btn ui-btn-inline ui-icon-location ui-btn-icon-right">Territorio</a>
+		
+		<p class=MsoNormal align=center style='text-align: center'>&nbsp;</p>
+
+		<table class=MsoTableContemporary border=0 cellspacing=0 cellpadding=0
+			style='border-collapse: collapse'>
+			<tr>
+				<td width=652 colspan=5 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<b><span style='font-size: 10.0pt; font-family: Verdana'>Recuperare
+								un Contesto</span></b>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+					</p>
+				</td>
+				<td width=108 valign=top
+					style='width: 81.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ID</span>
+					</p>
+				</td>
+				<td width=240 valign=top
+					style='width: 179.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>DESCRIZIONE</span>
+					</p>
+				</td>
+				<td width=130 valign=top
+					style='width: 97.8pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>NUMERO</span>
+					</p>
+				</td>
+				<td width=130 valign=top
+					style='width: 97.8pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>TIPO</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><input
+							type="radio" name="sel" value=""
+							onclick="javascript:todisplay('ctx-x');"></span>
+					</p>
+				</td>
+				<td width=108 valign=top
+					style='width: 81.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>REF2011</span>
+					</p>
+				</td>
+				<td width=240 valign=top
+					style='width: 179.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Lavorazioni
+							Refersh 2011</span>
+					</p>
+				</td>
+				<td width=130 valign=top
+					style='width: 97.8pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>3782279</span>
+					</p>
+				</td>
+				<td width=130 valign=top
+					style='width: 97.8pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>F</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=43 valign=top
+					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><input
+							type="radio" name="sel" value=""
+							onclick="javascript:todisplay('ctx-x');"></span>
+					</p>
+				</td>
+				<td width=108 valign=top
+					style='width: 81.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>CRE2011</span>
+					</p>
+				</td>
+				<td width=240 valign=top
+					style='width: 179.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Controllo
+							Refresh 2011</span>
+					</p>
+				</td>
+				<td width=130 valign=top
+					style='width: 97.8pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>15748</span>
+					</p>
+				</td>
+				<td width=130 valign=top
+					style='width: 97.8pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>P</span>
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<p class=MsoNormal>
+			<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+		</p>
+
+		<div id="ctx-x" style="display: none">
+			<table class=MsoTableContemporary border=0 cellspacing=0
+				cellpadding=0 style='border-collapse: collapse'>
+				<tr>
+					<td width=652 colspan=5 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<b><span style='font-size: 10.0pt; font-family: Verdana'>Province
+									da recuperare</span></b>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=652 colspan=5 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>TRENTO</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input
+								type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=4 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Bolzano</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input
+								type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=4 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Trento</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=652 colspan=5 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>LAZIO</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input
+								type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=4 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Roma</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input
+								type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=4 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Viterbo</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=4 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Frosinone</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=652 colspan=5 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>PUGLIA</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input
+								type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=4 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Bari</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input
+								type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=4 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Foggia</span>
+						</p>
+					</td>
+				</tr>
+			</table>
+
+			<p class=MsoNormal>
+				<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+			</p>
+
+			<p class=MsoNormal>
+				<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+			</p>
+
+<!-- 			<table class=MsoTableContemporary border=0 cellspacing=0 -->
+<!-- 				cellpadding=0 style='border-collapse: collapse'> -->
+<!-- 				<tr> -->
+<!-- 					<td width=652 colspan=2 valign=top -->
+<!-- 						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal align=center style='text-align: center'> -->
+<!-- 							<b><span style='font-size: 10.0pt; font-family: Verdana'>Soci -->
+<!-- 									Nazionali da recuperare</span></b> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=652 colspan=2 valign=top -->
+<!-- 						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>TELESPAZIO</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Marco -->
+<!-- 								Bianchi</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Luigi -->
+<!-- 								Rossi</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Giovanni -->
+<!-- 								Verdi</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=652 colspan=2 valign=top -->
+<!-- 						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>AUSELDA</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Romano -->
+<!-- 								Bruno</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Antonio -->
+<!-- 								Primo</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Massimo -->
+<!-- 								Grande</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=652 colspan=2 valign=top -->
+<!-- 						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>AUTOMAZIONE -->
+<!-- 								PIEMONTE</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Antonio -->
+<!-- 								Sandri</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'><input -->
+<!-- 								type="checkbox" name="" value=""></span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>Luigi -->
+<!-- 								Scarpa</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 				<tr> -->
+<!-- 					<td width=43 valign=top -->
+<!-- 						style='width: 32.4pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 					<td width=609 valign=top -->
+<!-- 						style='width: 456.5pt; border: none; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+<!-- 						<p class=MsoNormal> -->
+<!-- 							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+<!-- 						</p> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 			</table> -->
+
+			<p class=MsoNormal align=center style='text-align: center'>
+				<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+			</p>
+			<p class=MsoNormal>
+				<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+			</p>
+
+
+			<!-- 		<table class=MsoTableContemporary border=0 cellspacing=0 cellpadding=0 -->
+			<!-- 			style='border-collapse: collapse'> -->
+			<!-- 			<tr> -->
+			<!-- 				<td width=652 colspan=2 valign=top -->
+			<!-- 					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<b><span style='font-size: 10.0pt; font-family: Verdana'>Referenti -->
+			<!-- 								Provinciali da recuperare</span></b> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 			</tr> -->
+			<!-- 			<tr> -->
+			<!-- 				<td width=43 valign=top -->
+			<!-- 					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 				<td width=609 valign=top -->
+			<!-- 					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 			</tr> -->
+			<!-- 			<tr> -->
+			<!-- 				<td width=43 valign=top -->
+			<!-- 					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 				<td width=609 valign=top -->
+			<!-- 					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 			</tr> -->
+			<!-- 			<tr> -->
+			<!-- 				<td width=43 valign=top -->
+			<!-- 					style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 				<td width=609 valign=top -->
+			<!-- 					style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 			</tr> -->
+			<!-- 			<tr> -->
+			<!-- 				<td width=43 valign=top -->
+			<!-- 					style='width: 32.4pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 				<td width=609 valign=top -->
+			<!-- 					style='width: 456.5pt; border: none; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'> -->
+			<!-- 					<p class=MsoNormal align=center style='text-align: center'> -->
+			<!-- 						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span> -->
+			<!-- 					</p> -->
+			<!-- 				</td> -->
+			<!-- 			</tr> -->
+			<!-- 		</table> -->
+			
+			<table class=MsoTableContemporary border=0 cellspacing=0
+				cellpadding=0 style='border-collapse: collapse'>
+				<tr>
+					<td width=652 colspan=3 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal align=center style='text-align: center'>
+							<b><span style='font-size: 10.0pt; font-family: Verdana'>Soci
+									Nazionali da recuperare</span></b>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=652 colspan=3 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>TELESPAZIO</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=2 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Marco
+								Bianchi</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=2 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>REFERENTI
+								PROVINCIALI</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=24 valign=top
+						style='width: 18.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+						</p>
+					</td>
+					<td width=585 valign=top
+						style='width: 438.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Luigi
+								Rossi</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=24 valign=top
+						style='width: 18.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+						</p>
+					</td>
+					<td width=585 valign=top
+						style='width: 438.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Giovanni
+								Verdi</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=652 colspan=3 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>AUSELDA</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=2 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Romano
+								Bruno</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=2 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>REFERENTI
+								PROVINCIALI</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=24 valign=top
+						style='width: 18.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+						</p>
+					</td>
+					<td width=585 valign=top
+						style='width: 438.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Antonio
+								Primo</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=24 valign=top
+						style='width: 18.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+						</p>
+					</td>
+					<td width=585 valign=top
+						style='width: 438.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Massimo
+								Grande</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=652 colspan=3 valign=top
+						style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>AUTOMAZIONE
+								PIEMONTE</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=2 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Antonio
+								Sandri</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=609 colspan=2 valign=top
+						style='width: 456.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>REFERENTI
+								PROVINCIALI</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=24 valign=top
+						style='width: 18.0pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+						</p>
+					</td>
+					<td width=585 valign=top
+						style='width: 438.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Fabio
+								Grande</span>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td width=43 valign=top
+						style='width: 32.4pt; border: none; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'><input type="checkbox" name="" value=""></span>
+						</p>
+					</td>
+					<td width=24 valign=top
+						style='width: 18.0pt; border: none; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+						</p>
+					</td>
+					<td width=585 valign=top
+						style='width: 438.5pt; border: none; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+						<p class=MsoNormal>
+							<span style='font-size: 10.0pt; font-family: Verdana'>Luigi
+								Scarpa</span>
+						</p>
+					</td>
+				</tr>
+			</table>
+			<a href="dett.html" class="ui-btn ui-btn-inline ui-icon-grid ui-btn-icon-right">Dettaglio Contesto</a>
+			<a href="gsc.html" class="ui-btn ui-btn-inline ui-icon-user ui-btn-icon-right">Assegna Socio al contesto</a>
+			<a href="pv.html" class="ui-btn ui-btn-inline ui-icon-location ui-btn-icon-right">Territorio</a>
+
+		</div>
+		<p class=MsoNormal align=center style='text-align: center'>&nbsp;</p>
+
+	</div>
+
+
+</body>
+
+</html>

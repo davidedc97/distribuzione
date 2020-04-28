@@ -1,0 +1,208 @@
+<html>
+
+<head>
+<title>Gestione Soci provinciali</title>
+<style>
+<!-- /* Font Definitions */
+@font-face {
+	font-family: Verdana;
+	panose-1: 2 11 6 4 3 5 4 4 2 4;
+}
+/* Style Definitions */
+p.MsoNormal,li.MsoNormal,div.MsoNormal {
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	font-size: 12.0pt;
+	font-family: "Times New Roman";
+}
+
+@page Section1 {
+	size: 595.3pt 841.9pt;
+	margin: 70.85pt 2.0cm 2.0cm 2.0cm;
+}
+
+div.Section1 {
+	page: Section1;
+}
+-->
+</style>
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.css" />
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.css">
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3/jquery.mobile-1.4.3.js"></script>
+	<script src="js/jquery.mobile-1.4.3/jquery.ui.datepicker.js"></script>
+	<script id="mobile-datepicker" src="js/jquery.mobile-1.4.3/jquery.mobile.datepicker.js"></script>
+<!-- OPENLAYERS.MOBILE -->
+	<link rel="stylesheet" href="js/openlayers/style.mobile.css" type="text/css">
+	<link rel="stylesheet" href="js/openlayers/style.mobile-jq.css" type="text/css">
+	<script type="text/javascript" src="js/openlayers/OpenLayers.js"></script>	
+<!-- LOCAL -->	
+	<script type="text/javascript" src="js/sc.js"></script>
+</head>
+
+<body lang=IT>
+
+	<div class=Section1>
+
+		<table class=MsoTableContemporary border=0 cellspacing=0 cellpadding=0
+			style='border-collapse: collapse'>
+			<tr>
+				<td width=652 colspan=5 valign=top
+					style='width: 488.9pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<b><span style='font-size: 10.0pt; font-family: Verdana'>Soci per contesto</span></b>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>ENTE</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>SOCI
+							PROVINCIALI</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>&nbsp;</span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Telespazio</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>
+						<select id="s-tps">
+  							<option value="-1">&nbsp;</option>
+  							<option value="0">Marco Bianchi</option>
+  							<option value="1">Carlo Marini</option>
+  							<option value="1">Paola Torre</option>
+						</select>
+						</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; border-bottom: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><img alt="" src="pencil.png" onclick="javascript:viewSoc('soc-x','s-tps','&nbsp;Soci provinciali Telespazio');"/></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Auselda</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>
+						<select id="s-asd">
+							<option value="-1">&nbsp;</option>
+  							<option value="0">Romano Bruno</option>
+  							<option value="1">Silvia Rame</option>
+						</select>
+						</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><img alt="" src="pencil.png" onclick="javascript:viewSoc('soc-x','s-asd','&nbsp;Soci provinciali Auselda');" /></span>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.85pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>AP</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border: none; border-right: solid white 2.25pt; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>
+						<select id="s-ap">
+							<option value="-1">&nbsp;</option>
+  							<option value="0">Antonio Sandri</option>
+						</select>
+						</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; background: #CCCCCC; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><img alt="" src="pencil.png" onclick="javascript:viewSoc('soc-x','s-ap','&nbsp;Soci provinciali Automazione Piemonte');"/></span>
+					</p>
+				</td>
+			</tr>
+			
+			<tr>
+				<td width=93 valign=top
+					style='width: 69.85pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>Sofiter</span>
+					</p>
+				</td>
+				<td width=328 valign=top
+					style='width: 245.9pt; border-top: none; border-left: none; border-bottom: solid white 2.25pt; border-right: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'>
+						<select id="s-sof">
+							<option value="-1">&nbsp;</option>
+  							<option value="0">Francesco Micheli</option>
+						</select>
+						</span>
+					</p>
+				</td>
+				<td width=45 valign=top
+					style='width: 33.5pt; border: none; border-bottom: solid white 2.25pt; background: #F2F2F2; padding: 0cm 5.4pt 0cm 5.4pt'>
+					<p class=MsoNormal align=center style='text-align: center'>
+						<span style='font-size: 10.0pt; font-family: Verdana'><img alt="" src="pencil.png" onclick="javascript:viewSoc('soc-x','s-sof','&nbsp;Soci provinciali Sofiter');"/></span>
+					</p>
+				</td>
+			</tr>			
+			
+		
+		</table>
+		<p class=MsoNormal>&nbsp;</p>
+		
+		<div data-role="content" id="soc-x" style="display: none">
+			<div data-role="header" id="testa"></div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name" id="nome" value=""
+					placeholder="Nome" data-mini="true"/>
+			</div>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<input type="text" name="txt-name-2" id="nome2" value=""
+					placeholder="Cognome" data-mini="true"/>
+			</div>
+			
+			
+			<a href="#" onclick="javascript:undoSoc();" class="ui-btn ui-btn-inline ui-icon-back ui-btn-icon-right">Annulla</a>
+			<a href="#" onclick="javascript:addSoc();" class="ui-btn ui-btn-inline ui-icon-edit ui-btn-icon-right">Conferma</a>		
+			
+			
+		<div>
+	</div>
+
+</body>
+
+</html>
