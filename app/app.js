@@ -8,6 +8,7 @@ var myApp = angular.module('myApp', [
   'ngRoute',
   'ngMaterial',
   'ngMessages',
+  'ngWebSocket',
   'myApp.login',
   'myApp.contesti',
   'myApp.aggiungi-anagrafica',

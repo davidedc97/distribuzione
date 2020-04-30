@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.login', ['ngRoute'])
+angular.module('myApp.login', ['ngRoute', 'ngWebSocket'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/login', {
@@ -9,8 +9,7 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.controller('loginCtrl',  function($scope,$window) {
-  document.getElementById("navbar-btn").style.display = "none";
+.controller('loginCtrl',  function($scope,$window, $websocket) {
   $scope.labelCampi = {
     login: "Login",
     username: "Username",
@@ -54,21 +53,18 @@ angular.module('myApp.login', ['ngRoute'])
   $scope.login = function(){
     console.log("TODO");
     //let socket = new WebSocket("ws://localhost:8085/egeosAicFormWS/WSEndpointSian");
-    let socket = new WebSocket("ws://localhost:8085/egeosAicFormWS/servletWSDecrypt");
+    let socket = new WebSocket("ws://18.188.70.134:9080/egeosIbfWS/WSEndpointSIAN");
 
     socket.onopen = function(event){
       let body = {
-        username: "pippo",
-        password: "pwd"
+        "idRequest":"AUTH_REQUEST-0",
+        "dataInput": {
+          "username": "dinamik26@gmail.com",
+          "password": "1ZkpHv0E"
+        }
       }
       let json = JSON.stringify(body);
       let body64 = btoa(json);
-      console.log("BODY: ");
-      console.log(body);
-      console.log("JSON: ");
-      console.log(json);
-      console.log("BODY64: ");
-      console.log(body64);
 
       socket.send(body64);
     }
@@ -88,6 +84,42 @@ angular.module('myApp.login', ['ngRoute'])
   $scope.loginFinto = function(){
     console.log(ruolo);
     window.location.href = "#!/home";
+  }
+
+  $scope.login2 = function(){
+    let ws = $websocket("ws://18.188.70.134:9080/egeosIbfWS/WSEndpointSIAN");
+
+    ws.onOpen(function(event){
+      let body = {
+        "idRequest":"AUTH_REQUEST-0",
+        "dataInput": {
+          "username": "dinamik26@gmail.com",
+          "password": "1ZkpHv0E"
+        }
+      }
+      let json = JSON.stringify(body);
+      let body64 = btoa(json);
+      ws.send(body64);
+    });
+
+    ws.onError(function(error){
+      console.log("error");
+      console.log(error);
+    });
+
+    ws.onMessage(function(message) {
+      let blob = message.data;
+      new Response(blob).arrayBuffer().then(buffer => {
+        console.log(buffer);
+        JSZip.loadAsync(blob).then(function (zip) {
+          console.log(zip);
+          return zip.file("content.txt").async("string");
+        }).then(function (text) {
+          console.log(text);
+        });
+      });
+
+    });
   }
 
 

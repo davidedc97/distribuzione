@@ -12,13 +12,14 @@ angular.module('myApp.home', ['ngRoute'])
 .controller('homeCtrl', function($scope, $window) {
 
   $scope.toggleRotation = function(event) {
+    event.stopPropagation();
     $(event.target).parents(".card").find(".fa-chevron-down").toggleClass("rotate180");
-    $(event.target).parents(".card").find(".fa-chevron-down").addClass("not-clickable");
+    $(event.target).parents(".card").addClass("not-clickable");
     $(event.target).parents(".card").find(".collapse").collapse("toggle");
 
     // Prevengo il click per il tempo della transizione
     setTimeout(function() {
-      $(event.target).parents(".card").find(".fa-chevron-down").removeClass("not-clickable");
+      $(event.target).parents(".card").removeClass("not-clickable");
     }, 400);
 
   }
@@ -66,13 +67,16 @@ angular.module('myApp.home', ['ngRoute'])
   $(document).ready(function() {
 
     $("#left-container .card-header").click( function(event) {
-      let flag = $(event.target).find(".fa-chevron-down").hasClass("not-clickable");
+      let flag = $(event.target).parents(".card").hasClass("not-clickable");
       if(flag) return;
       $scope.toggleRotation(event);
     });
 
     $scope.displayModale();
-    $scope.modaleAperta = true;
+    $scope.$apply(function(){
+      $scope.modaleAperta = true;
+    });
+
 
     var map = new ol.Map({
       target: 'map',
@@ -82,8 +86,8 @@ angular.module('myApp.home', ['ngRoute'])
         })
       ],
       view: new ol.View({
-        center: ol.proj.fromLonLat([37.41, 8.82]),
-        zoom: 4
+        center: ol.proj.fromLonLat([12.56, 41.87]),
+        zoom: 6
       })
     });
 
