@@ -39,4 +39,72 @@ angular.module('myApp.contesti', ['ngRoute', 'myApp.excelModule'])
     }
   ];
 
+  $scope.addButtons = function (d) {
+    // `d` is the original data object for the row
+    return '<table cellspacing="0" border="0">'+
+        '<tr>'+
+            '<td><button class="btn btn-primary" ng-click="">btn1</button></td>'+
+            '<td><button class="btn btn-primary" ng-click="">btn2</button></td>'+
+            '<td><button class="btn btn-primary" ng-click="">btn3</button></td>'+
+        '</tr>'+
+    '</table>';
+  }
+
+  $scope.creaDatatable = function(){
+    let table = document.getElementById("datatable");
+    let html = '<thead>\
+      <tr>\
+        <th scope="col">Numero Elenco</th>\
+        <th scope="col">Codice</th>\
+        <th scope="col">Campagna</th>\
+        <th scope="col">Descrizione</th>\
+      </tr>\
+    </thead>\
+    <tbody>';
+
+    for(var i=0; i<$scope.listaContesti.length; i++){
+      let context = $scope.listaContesti[i];
+      html += '<tr>\
+        <td>' + context.numeroElenco + '</td>\
+        <td>' + context.codice + '</td>\
+        <td>' + context.campagna + '</td>\
+        <td>' + context.descrizione + '</td>\
+      </tr>';
+    }
+    html += '</tbody>';
+
+    table.innerHTML = html;
+  }
+
+  $(document).ready(function() {
+    $scope.creaDatatable();
+    let dt = $('#datatable').DataTable({
+      select: true,
+      paging: false,
+      searching: false,
+      info: false,
+      columnDefs: [
+        {  targets: -1,
+          className: 'dt-left'
+        }
+      ]
+    });
+
+    $('#datatable tbody').on('click', 'td', function () {
+        var tr = $(this).closest('tr');
+        var row = dt.row( tr );
+
+        if ( row.child.isShown() ) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        }
+        else {
+            // Open this row
+            row.child( $scope.addButtons(row.data()) ).show();
+            tr.addClass('shown');
+        }
+    } );
+} );
+
 });

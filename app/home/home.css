@@ -1,0 +1,130 @@
+@media (min-width: 768px) {
+    .h-md-100 { height: 100vh; }
+}
+
+.main-container{
+
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.my-border{
+  border: 5px solid black;/*#d6d6c2;*/
+}
+
+.my-border-l{
+  border-right: 5px solid black;
+  border-top: 5px solid black;
+}
+
+.my-border-r{
+  border-top: 5px solid black;
+}
+
+.card-header {
+  cursor: pointer;
+}
+
+/* Transizione frecce dropdown */
+
+.fa-chevron-down {
+  transition: all 0.4s ease;
+}
+.rotate180 {
+  transform: rotate(-180deg);
+}
+
+/* Box Legenda */
+
+.card-header strong{
+  font-size: 18px;
+}
+
+.box-validate {
+  border:1px solid black;
+  background-color:#408747;
+}
+
+.box-totAssegnate {
+  border:1px solid black;
+  background-color:#3835FF;
+}
+
+.box-parzAssegnate {
+  border:1px solid black;
+  background-color:#FFEF42;
+}
+
+.box-nonAssegnate {
+  border:1px solid black;
+  background-color:#FFFFFF;
+}
+
+.legenda-body ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+
+.legenda-body ul li {
+  font-size: 18px;
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+
+.legenda-body li span {
+  display: block;
+  float: left;
+  height: 30px;
+  width: 50px;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 70%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}

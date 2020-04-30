@@ -134,10 +134,11 @@
  .sidenav a {font-size: 18px;}
  .sm-screen { padding-top:10em; }
 }
+/*
 .card{
   border-radius: 7px;
   box-shadow: 0 0 10px #999;
-}
+}*/
 
 .datepicker{
 }

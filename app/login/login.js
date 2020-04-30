@@ -87,7 +87,7 @@ angular.module('myApp.login', ['ngRoute'])
 
   $scope.loginFinto = function(){
     console.log(ruolo);
-    window.location.href = "#!/contesti";
+    window.location.href = "#!/home";
   }
 
 
