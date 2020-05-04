@@ -90,6 +90,7 @@ angular.module('myApp.home', ['ngRoute'])
         zoom: 6
       })
     });
+    console.log(map);
 
   });
 

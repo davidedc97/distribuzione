@@ -20,7 +20,7 @@
         <table ng-show="modaleAperta" class="table table-striped table-bordered" id="table-container">
           <thead>
             <tr>
-              <th scope="col" colspan="3"></th>
+              <th scope="col" ></th>
               <th scope="col">Numero Elenco</th>
               <th scope="col">Codice</th>
               <th scope="col">Campagna</th>
@@ -29,18 +29,22 @@
           </thead>
           <tbody>
             <tr ng-repeat="x in listaContesti track by $index">
-              <td><button class="btn btn-outline-info contesto-btn" title="Visualizza contesto"><img src="img/dettComu.jpg"></img></button></td>
-              <td><button class="btn btn-outline-info contesto-btn" title="Modifica contesto"><img src="img/modifica_cons.gif"></img></button></td>
-              <td><button class="btn btn-outline-info contesto-btn" title="Elimina contesto"><img src="img/delrow.jpg"></img></button></td>
+              <td>
+                <button class="btn btn-outline-info contesto-btn" title="Visualizza contesto"><img src="img/dettComu.jpg"></img></button>
+                <button class="btn btn-outline-info contesto-btn" title="Modifica contesto"><img src="img/modifica_cons.gif"></img></button>
+                <button class="btn btn-outline-info contesto-btn" title="Elimina contesto"><img src="img/delrow.jpg"></img></button>
+              </td>
               <td>{{x.numeroElenco}}</td>
               <td>{{x.codice}}</td>
               <td>{{x.campagna}}</td>
               <td>{{x.descrizione}}</td>
             </tr>
             <tr ng-repeat="x in listaContesti track by $index">
-              <td><button class="btn btn-outline-info contesto-btn" title="Visualizza contesto"><img src="img/dettComu.jpg"></img></button></td>
-              <td><button class="btn btn-outline-info contesto-btn" title="Modifica contesto"><img src="img/modifica_cons.gif"></img></button></td>
-              <td><button class="btn btn-outline-info contesto-btn" title="Elimina contesto"><img src="img/delrow.jpg"></img></button></td>
+              <td>
+                <button class="btn btn-outline-info contesto-btn" title="Visualizza contesto"><img src="img/dettComu.jpg"></img></button>
+                <button class="btn btn-outline-info contesto-btn" title="Modifica contesto"><img src="img/modifica_cons.gif"></img></button>
+                <button class="btn btn-outline-info contesto-btn" title="Elimina contesto"><img src="img/delrow.jpg"></img></button>
+              </td>
               <td>{{x.numeroElenco}}</td>
               <td>{{x.codice}}</td>
               <td>{{x.campagna}}</td>
@@ -97,8 +101,29 @@
 
 
   <!-- Second Half -->
-
   <div class="col-sm-8 col-md-8 col-lg-8 p-0 h-md-100 my-border-r">
+
+    <!-- Menù mappa -->
+    <div class="border menu-map">
+      <button class="btn btn-outline-info" title="Torna alla mappa"><img src="img/italia.jpg"></img></button>
+      <button class="btn btn-outline-info" title="Sposta"><img src="img/icon_pan.png"></img></button>
+      <button class="btn btn-outline-info" title="Stampa in pdf"><img src="img/printPDF.jpg"></img></button>
+      <button class="btn btn-outline-info" title="Caricamento fotointerpreti"><img src="img/upload_csv_Disabled.jpg"></img></button>
+      <div class="input-group m-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Grid ID</span>
+        </div>
+        <input name="" ng-model="" ng-pattern="" class="form-control">
+      </div>
+      <button class="btn btn-outline-info" title="Ripristina refresh iniziale"><img src="img/tasto_cancella.gif"></img></button>
+      <label>Contesto: </label>
+      <div class="menu-map-right h-100">
+        <label>Utente: </label>
+        <button class="btn btn-outline-info btn-logout" title="Logout"><img src="img/close2.png"></img></button>
+      </div>
+    </div>
+
+    <!-- Mappa openlayer -->
     <div id="map" class="map"></div>
   </div>
 
