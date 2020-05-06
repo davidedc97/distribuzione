@@ -8487,6 +8487,17 @@ angular.module('myApp.home', ['ngRoute'])
       $scope.modaleAperta = true;
     });
 
+    $("#selectUtenti").multiselect({
+      maxHeight: 400,
+      nonSelectedText: "Seleziona utenti",
+      nSelectedText: "Selezionati",
+      includeSelectAllOption: true,
+      selectAllText: "Seleziona tutto",
+      allSelectedText: 'Tutti',
+      enableFiltering: true,
+      filterPlaceholder: "Ricerca"
+    });
+
     var map = new ol.Map({
       target: 'map',
       layers: [

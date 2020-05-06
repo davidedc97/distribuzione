@@ -124,8 +124,7 @@
               <div class="input-group-prepend">
                 <label class="input-group-text">Utenti</label>
               </div>
-              <select name="selectUtenti" ng-model="selectUtenti" class="custom-select">
-                <option selected disabled>Utenti</option>
+              <select id="selectUtenti" name="selectUtenti" ng-model="selectUtenti" multiple="multiple">
                 <option ng-repeat="x in listaUtenti" value="{{x}}" >{{x.nome}}</option>
               </select>
             </div>
