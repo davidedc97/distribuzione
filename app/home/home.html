@@ -10,7 +10,7 @@
       <div class="border" style="width: 100%; height: 40%">
       </div>
       <div class="border menu-bar" style="">
-        <button class="btn btn-outline-info" title="Aggiungi recapito"><img src="img/new_rec.jpg"></img></button>
+        <button class="btn btn-outline-info" title="Crea nuovo contesto" ng-click="aggiungiContesto()"><img src="img/new_rec.jpg"></img></button>
         <button class="btn btn-outline-info" title=""><img src="img/search_by_fogl_lavo.jpg"></img></button>
         <button class="btn btn-outline-info" title="Gestione fotointerpreti"><img src="img/user.png"></img></button>
       </div>
@@ -89,9 +89,36 @@
               <i class="fa fa-chevron-down"></i>
           </p>
         </div>
+
         <div id="collapseDati" class="collapse">
           <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Regione</label>
+              </div>
+              <select name="selectRegione" ng-model="selectRegione" class="custom-select">
+                <option selected disabled>Regione</option>
+                <option ng-repeat="x in listaRegioni" value="{{x.id}}" >{{x.nome}}</option>
+              </select>
+            </div>
+            <div ng-show="selectRegione" class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Provincia</label>
+              </div>
+              <select name="selectProvincia" ng-model="selectProvincia" class="custom-select">
+                <option selected disabled>Provincia</option>
+                <option ng-repeat="x in listaProvince[selectRegione]" value="{{x.id}}" >{{x.nome}}</option>
+              </select>
+            </div>
+            <div ng-show="selectProvincia" class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label class="input-group-text">Comune</label>
+              </div>
+              <select name="selectComune" ng-model="selectComune" class="custom-select">
+                <option selected disabled>Comune</option>
+                <option ng-repeat="x in listaComuni[selectProvincia]" value="{{x.id}}" >{{x.nome}}</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -113,7 +140,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Grid ID</span>
         </div>
-        <input name="" ng-model="" ng-pattern="" class="form-control">
+        <input class="form-control">
       </div>
       <button class="btn btn-outline-info" title="Ripristina refresh iniziale"><img src="img/tasto_cancella.gif"></img></button>
       <label>Contesto: </label>
@@ -124,7 +151,7 @@
     </div>
 
     <!-- Mappa openlayer -->
-    <div id="map" class="map"></div>
+    <div id="map" class="map" style="height: 92.7vh;"></div>
   </div>
 
 </div>

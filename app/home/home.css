@@ -6,11 +6,6 @@
 
 }
 
-.map {
-  height: 100%;
-  width: 100%;
-}
-
 .my-border{
   border: 5px solid black;/*#d6d6c2;*/
 }
@@ -114,7 +109,7 @@
   margin: auto;
   padding: 10px;
   border: 1px solid #888;
-  width: 80%;
+  width: 60%;
   height: 85%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
@@ -189,4 +184,10 @@
 .menu-map-right label{
   float: left;
   margin: 10px;
+}
+
+/* Mappa openlayer */
+
+.map {
+  width: 100%;
 }

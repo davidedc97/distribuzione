@@ -13,6 +13,7 @@ var myApp = angular.module('myApp', [
   'myApp.contesti',
   'myApp.aggiungi-anagrafica',
   'myApp.home',
+  'myApp.aggiungiContesto',
   'myApp.anagrafica',
   'myApp.modifica-anagrafica',
   'myApp.personale',
